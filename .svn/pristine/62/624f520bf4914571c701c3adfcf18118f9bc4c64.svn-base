@@ -1,0 +1,13 @@
+//返回APP首页
+let backApp = {
+    default: this,// for typescript
+	thisBack(that){
+		that.$bridge.call("cmmc.pushGoBack")
+	}
+}
+
+module.exports = backApp;
+// export function backApp(that){
+// 	console.log(that);
+// 	that.$bridge.call("cmmc.pushGoBack")
+// }

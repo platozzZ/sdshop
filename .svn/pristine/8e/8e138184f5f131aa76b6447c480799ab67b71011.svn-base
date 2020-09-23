@@ -1,0 +1,60 @@
+.last {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.last i,
+.color,
+.active {
+	margin-right: 0 !important;
+	font-size: 24upx;
+	cursor: pointer;
+}
+
+.setup-ul li img {
+	width: 28upx;
+	height: 28upx;
+}
+
+.setup-ul li img {
+	position: absolute;
+	right: 12upx;
+	bottom: 35upx;
+	z-index: 99;
+}
+
+.setup-ul>li,
+.set_l {
+	padding: 30upx 0upx;
+	border-bottom: 1px solid #eee;
+	margin-bottom: 1px;
+	position: relative;
+}
+/* 优化 */
+.yh-setup-ul {
+	position: relative;
+}
+
+.yh-color {
+	font-size: 28upx;
+}
+
+.yh-time {
+	font-size: 28upx;
+	margin: 0!important;
+}
+
+.yh-input {
+	width: 90%;
+}
+
+.yh-setupButtomWrap {
+	margin-top: 70upx;
+}
+
+.yh-setup-buttom {
+	width: 690upx;
+	height: 90upx;
+}

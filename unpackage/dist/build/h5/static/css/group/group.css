@@ -1,0 +1,293 @@
+.order_header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.head_img {
+	width: 24upx;
+	height: 36upx;
+	position: absolute;
+	top: 16upx;
+	left: 30upx;
+}
+
+.head_search {
+	width: 40upx;
+	height: 40upx;
+	visibility: hidden;
+}
+
+.order_header {
+	justify-content: space-around;
+	width: 100%;
+	border-bottom: 1px solid #D2D2D2;
+}
+
+.header_li {
+	width: 25%;
+	text-align: center;
+	height: 84upx;
+	line-height: 84upx;
+	border-bottom: 1px solid #eee;
+	font-size: 30upx;
+	color: #9D9D9D;
+}
+
+.header_border {
+	color: #020202;
+	font-weight: bold;
+	position: relative;
+}
+
+.header_border:after {
+	border-bottom: 5upx solid #020202;
+	position: absolute;
+	bottom: 0;
+	width: 50%;
+	content: "";
+	left: 25%;
+}
+
+.last_right>div {
+	justify-content: center;
+}
+
+.position_head {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	background-color: #fff;
+	z-index: 35;
+}
+
+.group_imgurl img {
+	width: 100%;
+	height: 272upx;
+}
+
+.group {
+	padding: 0 30upx;
+}
+
+.group li {
+	position: relative;
+	padding: 30upx 0;
+	border-bottom: 1px solid #E6E6E6;
+}
+
+.group li img {
+	width: 220upx;
+	height: 220upx;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 18upx;
+	left: 0;
+}
+
+.group_div {
+	padding-left: 243upx;
+}
+
+.group_title {
+	font-size: 28upx;
+	color: #020202;
+	line-height: 38upx;
+}
+
+.group_num {
+	font-size: 22upx;
+	color: #FFFFFF;
+	line-height: 32upx;
+	padding-top: 30upx;
+}
+
+.group_money {
+	font-size: 30upx;
+	color: #020202;
+	padding-right: 200upx;
+	line-height: 38upx;
+	padding-top: 28upx;
+}
+
+.group_money span {
+	font-size: 30upx;
+	color: #FF3333;
+}
+
+.text-bold {
+	font-weight: bold;
+}
+
+.group_price {
+	padding-right: 200upx;
+	line-height: 28upx;
+}
+
+.group_price span {
+	font-size: 24upx;
+	color: #9B9B9B;
+	position: relative;
+}
+
+.group_price span:after {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	height: 1upx;
+	/* border-bottom: 1px solid #999999; */
+	content: "";
+}
+
+.group_go {
+	width: 190upx;
+	background-color: #020202;
+	height: 70upx;
+	position: absolute;
+	border-radius: 6upx;
+	bottom: 30upx;
+	right: 0;
+	text-align: center;
+	line-height: 70upx;
+	color: #fff;
+	font-size: 30upx;
+}
+
+
+.list_break1 {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.list_break2 {
+	word-break: break-all;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+
+.nav_twin {
+	font-size: 30upx;
+	font-family: PingFang-SC-Medium;
+	font-weight: 500;
+	color: rgba(153, 153, 153, 1);
+	width: 50%;
+	text-align: center;
+	float: left;
+	height: 90upx;
+	line-height: 90upx;
+	position: relative;
+}
+
+.twins_box{
+	height: 90rpx;
+}
+.twins {
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	height: 90upx;
+	background: rgba(255, 255, 255, 1);
+	border-top: 1px solid rgba(238, 238, 238, 1);
+	border-bottom: 1px solid rgba(238, 238, 238, 1);
+}
+
+.nav_twin_hover {
+	font-size: 30upx;
+	font-family: PingFang-SC-Bold;
+	font-weight: bold;
+	color: rgba(36, 36, 36, 1);
+}
+
+/* .nav_twin:hover .nav_line {
+	display: block;
+} */
+.nav_line {
+	position: absolute;
+	bottom: 0upx;
+	left: 29.9%;
+	width: 150upx;
+	height: 5upx;
+	background: rgba(36, 36, 36, 1);
+	display: block;
+}
+
+.g_n_num {
+	background: rgba(2, 2, 2, 1);
+	border-radius: 4upx;
+	padding: 3upx 5upx;
+}
+
+.g_n_dian {
+	margin: 0upx 8upx;
+}
+
+.gray_bg {
+	background: rgba(2, 2, 2, 1);
+	opacity: 0.4;
+}
+
+.gd_bq {
+	width: 120upx;
+	height: 120upx;
+	border-radius: 50%;
+	background: rgba(0, 0, 0, 0.6);
+	text-align: center;
+	line-height: 120upx;
+	position: absolute;
+	top: 66upx;
+	left: 50upx;
+	z-index: 99;
+	font-size: 26upx;
+	font-family: PingFang-SC-Medium;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 1);
+}
+
+.goHome {
+	border: 1px solid #000;
+	border-radius: 5upx;
+	padding: 10upx 60upx;
+	color: #000;
+	background-color: #fff;
+	display: flex;
+}
+
+.tips-box {
+	height: 100vh;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+
+/* 优化 */
+.yh-noFindDiv {
+	width: 100%;
+	padding-top: 178upx;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+}
+
+.yh-toHome {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 60upx;
+}
+
+.yh-pronum {
+	font-size: 26upx;
+	padding-right: 10upx;
+}
+
+.yh-min-man {
+	font-size: 26upx;
+	padding-right: 10upx;
+}

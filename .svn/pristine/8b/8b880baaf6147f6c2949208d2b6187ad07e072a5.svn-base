@@ -1,0 +1,759 @@
+<template>
+	<div class="home order_ii" :class="{overflowhide:widgetinfoo}">
+		<lktauthorize ref="lktAuthorizeComp" v-on:pChangeLoginStatus="changeLoginStatus" ></lktauthorize>
+		<!-- #ifndef MP -->
+		<div class="data_h" :style="{height: halfWidth}">
+			<div class="data_h_h" :style="{height: halfWidth}"></div>
+		</div>
+		<!-- #endif -->
+		<div v-if='!banner' class='yulan'>
+			<img class='img' :src='yulan'></image>
+		</div>
+		<div v-else>
+			<div>
+				<!-- 头部 -->
+				<div style="height: 89upx;">
+					
+					<!-- #ifdef MP-WEIXIN -->
+					<div class="head" :style="{top:halfWidth}" style="position: fixed;">
+						
+						<div class="search" @tap="_focus">
+							<img :src='search2x' />
+							<div class='search_div'>搜索你想要的商品</div>
+						</div>
+						
+						<div class="xiaoxi" @tap="_navigateTo('../message/systemMesage')">
+							<div v-if='xxnum && xxnum != 0' class='xxnum'>{{ xxnum }}</div>
+							<img :src='xiaoxi2x' />
+						</div>
+						
+					</div>
+					<!-- #endif -->
+					
+					<!-- #ifndef MP-WEIXIN -->
+					<div class="head" :style="{top:halfWidth}" style="position: fixed;">
+						<img class="backApp" src="../../static/img/back2x.png" @tap="backApp"></img>
+						<img v-if='logo' :src='logo' @tap="backApp">
+						<img v-else src="" alt="">
+						<div class="search" @tap="_focus">
+							<img :src='search2x' />
+							<div class='search_div1'>搜索你想要的商品</div>
+						</div>
+						<div class="xiaoxi" @tap="_navigateTo('../message/systemMesage')">
+							<div v-if='xxnum&&xxnum!=0' class='xxnum'>{{xxnum}}</div>
+							<img :src='xiaoxi2x' />
+						</div>
+					</div>
+					<!-- #endif -->
+
+				</div>
+				<!--  轮播图   -->
+				<swiper class='swiper' autoplay="true" indicator-dots='true' interval='3000' circular='true'>
+					<swiper-item v-for='(item,index) in banner' :key="index">
+						<img class="swipe" :src="item.image" @tap='_toAllGoods(item.url,item.type,item.parameter)' />
+					</swiper-item>
+				</swiper>
+				<ul class='home_new'>
+					<li v-for='(item,index) in plugin_arr' :key='index' @touchstart='_coupon(index)' @click='_oncoupon(item.url,index)'>
+						<!-- #ifndef MP-ALIPAY -->
+						<img  :src="item.status?item.appimg:item.appimg" />
+						<p>{{item.name}}</p>
+						<!-- #endif -->
+						<!-- #ifdef MP-ALIPAY -->
+						<img v-if="item.name != '拼团'" :src="item.status?item.appimg:item.appimg" />
+						<p v-if="item.name != '拼团'">{{item.name}}</p>
+						<!-- #endif -->
+					</li>
+				</ul>
+				<!-- 商品分类展示 -->
+				<div class='relative'>
+					<div class='goods_all'>
+						<ul class='goods' :style='{width:width1}'>
+							<li class='goods_li' v-for='(item,index) in goods_centre' :key='index' @tap="_title(index)">
+								<span :class="{color:title_index==index}">{{item.pname}}</span>
+								<div class='goods_li_border' v-if='title_index==index'></div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class='home_l'>
+					<ul class='home_slider' id='goods_slider' ref='goods_slider'>
+						<li class='goods_slider_li' v-for='(item,index) in centre_list' :key='index' @tap="_goods(item.id)">
+							<div style="display: flex;position: relative;justify-content: center;">
+								<image lazy-load='true' :src="item.imgurl" />
+								<div v-if="item.status==3" style="width: 120rpx;height: 120rpx;border-radius: 50%;background-color: rgba(0,0,0,0.6);position:absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);color: #FFFFFF;font-size: 26rpx;line-height: 120rpx;text-align: center;">已下架</div>
+							</div>
+							<p style="margin-top: 20upx;">{{item.product_title}}</p>
+							<p style="margin: 10upx 0 30upx 5upx;color:#FF0000;text-align: center;width: 90%;">￥<span style="font-size: 28upx;font-weight: bold;color:#FF0000">{{item.price}}</span></p>
+						</li>
+					</ul>
+				</div>
+				<!--  间隔  -->
+				<div class='hr' v-if="list_jf.list&&list_jf.list.length>0"></div>
+				<!--积分商城-->
+				<div class="zfb_bgc" style="display: flex; flex-direction: column;" v-if="list_jf.list&&list_jf.list.length>0">
+					<div class="goodsDetail">
+						<span class='goods_title'>积分商城</span>
+						<span class='goods_text'>热销爆款，超值兑换</span>
+					</div>
+					<img @tap="_navigateTo('/pagesB/integral/integral')" class="home_integral_img" :src="home_integral_img" alt="">
+					<template v-for="(item,index) in list_jf.list">
+						<div class="integral" v-if="index<2" :key="index" @tap="_navigateTo('/pagesB/integral/integral_detail?pro_id='+item.id)">
+							<img :src="item.imgurl" alt="">
+							<div style="flex: 1;">
+								<p class="integral_name">{{item.product_title}}</p>
+								<span class="integral_num">已售<span>{{item.sales}}</span>件</span>
+								<div class="integral_bottom">
+									<div class="integral_price">
+										<div>
+											<template v-if="item.money>0">
+												￥<p>{{item.money}}</p> + 
+											</template>
+											<img :src="jf_h" alt=""><p>{{item.integral}}</p>
+										</div>
+										<p>市场价:<span>￥{{item.price}}</span></p>
+									</div>
+									<div class="btn" @tap.stop="_navigateTo('/pagesB/integral/integral_order?id='+item.id)">立即兑换</div>
+								</div>
+							</div>
+						</div>
+					</template>
+					
+				</div>
+				<!--  间隔  -->
+				<div class='hr'></div>
+				<!-- <view class="">
+					halfWidth:{{halfWidth}}
+				</view> -->
+				<!--猜你喜欢-->
+				<div :style="{marginBottom:h5Height}" class="zfb_bgc">
+					<div class="goodsDetail">
+						<span class='goods_title'>猜你喜欢</span>
+						<span class='goods_text'>精选人气商品，为你推荐</span>
+					</div>
+					
+					<ul class="goods_ul">
+						<li class='goods_like' v-for='(item,index) in goods_like' :key='index' @tap="_goods(item.id)">
+							<div style="display: flex;position: relative;">
+								<image class='goods_like_img' lazy-load :src="item.imgurl" />
+								<div v-if="item.status==3" style="width: 120rpx;height: 120rpx;border-radius: 50%;background-color: rgba(0,0,0,0.6);position:absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);color: #FFFFFF;font-size: 26rpx;line-height: 120rpx;text-align: center;">已下架</div>
+							</div>
+							<p>{{item.product_title||item.name}}</p>
+							<div class='goods_mun'>
+								<div>
+									<span class='goods_mun_price'>￥<span class='span'>{{item.price}}</span></span>
+									<div class='goods_mun_data'>
+										<span class='span'>月销量：{{item.volume}}件</span>
+										<img class='img' @tap.stop="_discover(item.id)" :src="disc" />
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					
+					<uni-load-more :loadingType="loadingType"></uni-load-more>
+				</div>
+				<div class='bg'></div>
+			</div>
+		</div>
+		<!-- APP更新 -->
+		<div class="mask" v-if='widgetinfoo'>
+			<div class="mask_all">
+				<img :src="upbg" class="mask_bg">
+				<img :src="close" class="mask_close" @tap="close_mask()">
+				<b class="mask_titel">{{newapp.version}}更新内容</b>
+				<div class="mask_content">
+					<!-- {{newapp.note}} -->
+					<wxParse :content="newapp.note"></wxParse>
+				</div>
+				<div class="mask_text">
+					<div class="mask_btn" @tap='update()'>立即升级</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<script>
+	import {
+		mapMutations,
+		mapState
+	} from 'vuex'
+	import uniLoadMore from "@/components/uni-load-more.vue"
+	import {
+		setStorage,
+		getStorage
+	} from '../../common/storage.js'
+	import wxParse from '../../components/mpvue-wxparse/src/wxParse.vue'
+	import lktauthorize from '../../components/lktauthorize.vue'
+
+	export default {
+		data() {
+			return {
+				widgetinfoo: false,
+				guiderImg: '',
+				guider: true,
+				logo: '',
+				fastTap: false,
+				disc: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL+'images/icon1/2222x.png',
+				start2x: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + "images/icon1/9908.png",
+				laike2x: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + "images/icon1/laike2x.png",
+				xiaoxi2x: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL+'images/icon/xiaoxi172x.png',
+				search2x: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL+'images/icon1/searchh.png',
+				upbg: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL+'images/icon1/upbg.png',
+				yulan:this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + '/images/icon1/yulan.gif',  //加载动画
+				home_integral_img:this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + '/images/icon1/home_integral_img.png', 
+				jf_h:this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + '/images/icon1/jf_h.png', 
+				bottom: 1,
+				banner: '', //banner轮播图
+				goods_centre: '', //中间商品
+				goods_like: '', //猜你喜欢商品
+				centre_list: '', //中间商品对应的商品列表
+				title_index: 0,
+				page: 1, //加载页面
+				loadingType: 0,
+				scan: '',
+				straining: true,
+				reduce: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL+'images/icon1/3332x.png',
+				plus: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL+'images/icon1/4442x.png',
+				display: false, //热门推荐的遮罩层
+				arr: [],
+				tran: '',
+				goods_title: [],
+				plusArr: [],
+				cunt: 5,
+				open: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL+'images/icon1/1112x.png',
+				close: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL+'images/icon1/close2x.png',
+				coupon_t: true,
+				sign_t: true,
+				task_t: true,
+				draw_t: true,
+				coupon: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL+'images/icon1/youhuiquan2x.png',
+				coupon_hui: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL+'images/icon1/6662x.png',
+				sign: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL+'images/icon1/qiandaolll2x.png',
+				sign_hui: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL+'images/icon1/8882x.png',
+				task: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL+'images/icon1/renwu2x.png',
+				task_hui: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL+'images/icon1/7772x.png',
+				draw: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL+'images/icon1/choujiang2x.png',
+				draw_hui: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL+'images/icon1/9992x.png',
+				group1: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL+'images/icon1/group12x.png',
+				group2: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL+'images/icon1/group22x.png',
+				access_id: '',
+				is_sign_status: '',
+				ptImg: true,
+				plugin_arr: [],
+				newapp: '',
+				isClick: false, //防止连续点击
+				xxnum: 0,
+				list_jf: {}
+			}
+		},
+		onTabItemTap(e) {
+			this.LaiKeTuiCommon.closeMPAuthWin(this);
+		},
+		onShareAppMessage:function(res){
+			return {
+				title: "商城首页",
+				path: '/pages/tabBar/home',
+				success: function(res1){
+					console.log("转发成功");
+				},
+			}
+		},
+		onLoad(option) {
+			console.log(option);
+			var me = this;
+			// 有分享的属性
+			console.log(me.$store.state.channel)
+			if (option.isfx == true || option.isfx == 'true') {
+				if (option.pages == 'goodsDetailed') {
+					if (option.fatherId != '' || option.fatherId) {
+						uni.navigateTo({
+							url: '../../pages/goods/goodsDetailed?productId=' + option.productId + '&isfx=true&fatherId=' + option.fatherId
+						})
+						return false
+					}
+					uni.navigateTo({
+						url: '../../pages/goods/goodsDetailed?productId=' + option.productId + '&isfx=true'
+					})
+					return false
+				} else if (option.pages == 'groupDetailed') {
+					console.log(1111333333333222222);
+					uni.navigateTo({
+						url: '../../pagesA/group/groupDetailed?pro_id=' + option.pro_id +'&activity_no='+this.option.activity_no + '&isfx=true'
+					})
+					return false
+				} else if (option.pages == 'group_end') {
+					uni.navigateTo({
+						url: '../../pagesA/group/group_end?sNo=' + option.sNo + '&friend=true&isfx=true'
+					})
+					return false
+				}
+			}
+
+			this.isClick = false
+			// #ifdef APP-PLUS
+			this.widgetinfo()
+			// #endif
+			
+			me.LaiKeTuiCommon.getUrlFirst(me._axios);
+		},
+		// beforeCreated() {
+		// 	this.access_id = uni.getStorageSync('access_id') ? uni.getStorageSync('access_id') : this.$store.state.access_id
+		// 	this._axios()
+		// },
+		computed: {
+			halfWidth: function() {
+				// let statusBar1 = uni.getStorageSync('data_height')
+				// let statusBar2 = this.$store.state.data_height
+				// uni.showModal({
+				// 	title: '缓存statusBar1：' + statusBar1,
+				// 	content: '$store的statusBar2：' + statusBar2,
+				// })
+				var gru = uni.getStorageSync('data_height') ? uni.getStorageSync('data_height') : this.$store.state.data_height
+				var heigh = parseInt(gru)
+				// #ifdef MP
+				heigh=0
+				// #endif
+				return heigh+ 'px';
+			},
+			h5Height: function() {
+				var height
+				// #ifdef H5
+				height = 100
+				// #endif
+				// #ifndef H5
+				height = 0
+				// #endif
+				return uni.upx2px(height) + 'px';
+			},
+			width1: function() {
+				var width
+				width = this.goods_centre.length * 150
+				return uni.upx2px(width) + 'px';
+			},
+			...mapState({
+				_cart_num: 'cart_num'
+			})
+		},
+		onShow(option) {
+			console.log(this.$store.state);
+			let stateUrl = this.$store.state.url
+			console.log(stateUrl);
+			// setTimeout(function(){
+			// 	uni.showModal({
+			// 		title: 'this.$store.state:',
+			// 		content: stateUrl,
+					
+			// 	});
+			// },10000)
+			let me = this;
+			this.loadingType = 0
+			var isfx = uni.getStorageSync("isfx")
+			if (isfx) {
+				var pages = uni.getStorageSync("pages")
+				if (pages == 'goodsDetailed') {
+					var fatherId = uni.getStorageSync("fatherId")
+					var productId = uni.getStorageSync("productId")
+					uni.removeStorageSync("isfx")
+					uni.removeStorageSync("pages")
+					uni.removeStorageSync("fatherId")
+					uni.removeStorageSync("productId")
+					if (fatherId != '' || fatherId) {
+						uni.navigateTo({
+							url: '../../pages/goods/goodsDetailed?productId=' + productId + '&isfx=true&fatherId=' + fatherId
+						})
+						return false
+					}
+					uni.navigateTo({
+						url: '../../pages/goods/goodsDetailed?productId=' + productId + '&isfx=true'
+					})
+					return false
+				} else if (pages == 'groupDetailed') {
+					var pro_id = uni.getStorageSync("pro_id")
+					var activity_no = uni.getStorageSync("activity_no")
+					uni.removeStorageSync("pro_id")
+					uni.removeStorageSync("activity_no")
+					uni.removeStorageSync("isfx")
+					uni.removeStorageSync("pages")
+					uni.navigateTo({
+						url: '../../pagesA/group/groupDetailed?pro_id=' + pro_id +'&activity_no='+activity_no + '&isfx=true'
+					})
+					return false
+				} else if (pages == 'group_end') {
+					var sNo = uni.getStorageSync("sNo")
+					uni.removeStorageSync("sNo")
+					uni.removeStorageSync("isfx")
+					uni.removeStorageSync("pages")
+					uni.removeStorageSync("friend")
+					uni.navigateTo({
+						url: '../../pagesA/group/group_end?sNo=' + sNo + '&friend=true&isfx=true'
+					})
+					return false
+				}
+			}
+			this.access_id = uni.getStorageSync('access_id') ? uni.getStorageSync('access_id') : this.$store.state.access_id
+			// me.LaiKeTuiCommon.getUrlFirst(me._axios);
+			
+			//添加tabbar购物车小点提醒
+			this.showCartNumInfo()
+			this.isClick = false
+			// #ifndef H5
+			if (!this.$store.state.isMe) {
+				uni.getClipboardData({
+					success: function(res) {
+						var r = new RegExp("lkt-", "ig");
+						if (res.data) {
+							if (res.data.match(r)) {
+								var url = res.data.replace(r, '../../')
+								uni.navigateTo({
+									url,
+									success: function() {
+										me.$store.state.isMe = true
+									}
+								})
+							}
+						}
+					}
+				})
+			}
+			// #endif
+		},
+		onReachBottom: function() {
+			var me = this
+			if (this.loadingType != 0) {
+				return;
+			}
+			this.loadingType = 1;
+			var data = {
+				module: 'app',
+				action: 'index',
+				app: 'get_more',
+				page: this.page,
+			}
+			if (this.goods_like && this.goods_like.length > 0) {
+				uni.request({
+					data,
+					url: uni.getStorageSync("url"),
+					header: {
+						'content-type': 'application/x-www-form-urlencoded'
+					},
+					method: 'POST',
+					success: (res) => {
+						let {
+							data: {
+								data
+							}
+						} = res
+						me.page += 1
+						if (data.length > 0) {
+							me.goods_like = me.goods_like.concat(data);
+							me.loadingType = 0;
+						} else {
+							me.loadingType = 2;
+						}
+					},
+					error: (err) => {
+						console.log(err)
+					}
+				})
+			}
+		},
+		methods: {
+			backApp(){
+				console.log(this);
+				console.log(this.$loginFrom);
+				console.log(this.$backApp);
+				this.$backApp.thisBack(this,'')
+			},
+			getAppPluginImg(img){
+				let plugin_shortcoin = this.LaiKeTuiCommon.LKT_ENDURL+img;
+				return plugin_shortcoin;
+			},
+			changeLoginStatus(){
+				var me = this;
+				me.access_id = me.$store.state.access_id;
+				me._axios();
+			},
+			widgetinfo() {
+				var me = this
+				plus.runtime.getProperty(plus.runtime.appid, function(widgetInfo) {
+					uni.request({
+						url: uni.getStorageSync("endurl") + 'widgetinfo/update.php?store_id='+me.LaiKeTuiCommon.LKT_STORE_ID,
+						data: {
+							version: widgetInfo.version,
+							name: widgetInfo.name
+						},
+						success: (result) => {
+							me.newapp = result.data;
+							if (uni.getSystemInfoSync().platform === 'android') {
+								me.newapp.url = me.newapp.android_url
+							} else {
+								me.newapp.url = me.newapp.ios_url
+							}
+							if (me.newapp.status == 1) {
+								me.widgetinfoo = true
+								uni.hideTabBar()
+							}
+						}
+					});
+				});
+			},
+			update() {
+				this.widgetinfoo = false
+				uni.showTabBar()
+				plus.runtime.openURL(this.newapp.url, function(res) {
+					console.log(res);
+					uni.showToast({
+						title: '更新失败！！',
+						duration: 1000,
+						icon: 'none'
+					})
+				});
+			},
+			...mapMutations({
+				cindex: 'SET_CINDEX',
+				gxxunm:'SET_GXXNUM'
+			}),
+			_toAllGoods(url, type, parameter) {
+				if (url) {
+					if (type == 'navigate') {
+						uni.navigateTo({
+							url,
+						})
+						this.page = 1
+						this.loadingType = 0
+					} else if (type == 'switchTab') {
+						this.page = 1
+						this.loadingType = 0
+						uni.switchTab({
+							url
+						})
+					}
+				}
+			},
+			_coupon(num) {
+				this.plugin_arr[num].status = true
+			},
+			_oncoupon(url, num) {
+				this.plugin_arr[num].status = false
+				this.page = 1
+				this.loadingType = 0
+				uni.navigateTo({
+					url
+				})
+			},
+			//打开分类遮罩
+			_oncomplete() {
+				this.display = !this.display
+			},
+			_focus() {
+				this.page = 1
+				this.loadingType = 0
+				uni.navigateTo({
+					url: '../../pagesA/search/search'
+				})
+			},
+
+			handleBottomChange(status) {
+				this.bottomStatus = status;
+			},
+			/*   商品导航切换    */
+			_title(index) {
+				this.title_index = index;
+				this.centre_list = this.goods_centre[index].list
+			},
+			/*   跳转商品详情页    */
+			_goods(id) {
+				this.page = 1
+				this.loadingType = 0
+				this.pro_id(id);
+				uni.navigateTo({
+					url: '../goods/goodsDetailed?toback=true&pro_id=' + id
+				});
+			},
+			close_mask() {
+				uni.showTabBar()
+				this.widgetinfoo = false
+			},
+			_discover(id) {
+				this.page = 1
+				this.loadingType = 0
+				this.pro_id(id)
+				uni.navigateTo({
+					url: '../collection/discover?pro_id=' + id
+				})
+			},
+			_axios() {
+				var me = this
+				var data = {
+					module: 'app',
+					action: 'index',
+					app: 'index',
+					access_id: this.access_id
+				}
+				//#ifndef MP-WEIXIN
+				data.store_type = 2
+				// #endif
+				//#ifdef MP-WEIXIN
+				data.store_type = 1
+				// #endif
+				var suc = function suc() {
+					let {
+						data: {
+							data: {
+								banner,
+								list1,
+								list2,
+								list3,
+								logo,
+								plugin_arr,
+								list_jf
+							}
+						}
+					} = res
+					me.banner = banner
+					me.goods_centre = list2
+					me.goods_like = list3
+					me.logo = logo
+					me.centre_list = me.goods_centre[me.title_index].list;
+					me.list_jf = list_jf
+					
+					let plas = [];
+					for(var x in plugin_arr){
+						plas[x] = plugin_arr[x];
+						plas[x]['appimg'] = me.getAppPluginImg(plugin_arr[x]['appimg']); 
+					}
+					console.log("plugin_arr: " + JSON.stringify(plas));
+					me.plugin_arr = plas;
+					
+				}
+				uni.request({
+					data,
+					url: uni.getStorageSync("url"),
+					xhrFields: {
+						withCredentials: true
+					},
+					header: {
+						'content-type': 'application/x-www-form-urlencoded'
+					},
+					method: 'POST',
+					success: (res) => {
+						let {
+							data: {
+								data: {
+									banner,
+									list2,
+									list3,
+									logo,
+									plugin_arr,
+									xxnum,
+									list_jf
+								}
+							}
+						} = res
+						me.banner = banner
+						me.goods_centre = list2
+						me.goods_like = list3
+						me.list_jf = list_jf
+						me.logo = logo
+						me.centre_list = me.goods_centre[me.title_index].list
+						me.plugin_arr = plugin_arr
+						me.xxnum = xxnum>99 ? '99+' : xxnum //限制消息数超过99时显示99+
+						me.page = 1;
+						let plas = [];
+						for(var x in plugin_arr){
+							plas[x] = plugin_arr[x];
+							plas[x]['appimg'] = me.getAppPluginImg(plugin_arr[x]['appimg']); 
+						}
+						me.plugin_arr = plas;
+					}
+				})
+
+			},
+			//添加tabbar购物车小点提醒
+			showCartNumInfo() {
+				if (this._cart_num) {
+					var cart_num_str = String(this._cart_num)
+					uni.setTabBarBadge({
+						index: 2,
+						text: cart_num_str
+					})
+				} else {
+					uni.removeTabBarBadge({
+						index: 2
+					})
+				}
+			},
+			...mapMutations({
+				pro_id: 'SET_PRO_ID',
+				arr_home: 'SET_ARR_HOME',
+				data_height: 'SET_DATA_HEIGHT',
+			}),
+
+			_navigateTo(url) {
+				var me = this
+				if (me.isClick === false) {
+					me.isClick = true;
+					me.$refs.lktAuthorizeComp.handleAfterAuth(me, '../login/login?landing_code=1', function() {
+						uni.navigateTo({
+							url: url
+						});
+					});
+					setTimeout(function() {
+						me.isClick = false;
+					}, 800);
+				}
+			},
+			// 登录超时的timeout
+			timeout() {
+				uni.showToast({
+					title: '账号登录超时,请重新登录！',
+					icon: 'none',
+					duration: 1500
+				});
+				setTimeout(function() {
+					uni.navigateTo({
+						url: '../login/login?landing_code=1',
+					})
+				}, 1500)
+			},
+			_navigateTo1(url) {
+				uni.scanCode({
+					success: function(res) {
+						console.log('条码类型：' + res.scanType);
+						console.log('条码内容：' + res.result);
+					},
+					error: function(err) {
+						console.log(err)
+					}
+				});
+				this.page = 1
+				this.loadingType = 0;
+			}
+		},
+		components: {
+			uniLoadMore,
+			wxParse,
+			lktauthorize,
+		}
+	}
+</script>
+
+<style scoped> 
+	@import url("../../static/css/tabBar/home.css");
+	.head img{
+		margin: 0;
+	}
+	.head img.backApp{
+		width: 13px;
+		height: 20px;
+		/* padding-right: 10px; */
+	}
+	.search img{
+		margin-right: 10px;
+	}
+	.xiaoxi{
+		margin-left: 10px;
+	}
+</style>

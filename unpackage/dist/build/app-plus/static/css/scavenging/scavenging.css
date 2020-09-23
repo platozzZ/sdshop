@@ -1,0 +1,18 @@
+input::-webkit-input-placeholder{color: #9D9D9D;}
+	.empty_input,.empty_search,.sacven_goods{display: flex;align-items: center;}
+	.empty{margin: 0 30upx;text-align: center;color: #020202;}
+	.empty_img{margin: 140upx 0 30upx 0;width: 200upx;height: 200upx;}
+	.empty_p{font-size: 30upx;color:#020202;margin-bottom: 60upx;}
+	.empty_input,.empty_search{width: 690upx;height: 70upx;border-radius: 10upx;padding:0 30upx;}
+	.empty_input{justify-content: flex-start;font-size: 28upx;border: 1px solid #eee;}
+	.empty_input span:first-child{color:#9D9D9D;margin-right: 20upx;}
+	.empty_search{justify-content: space-between;background-color: #F4F4F4;margin-top: 20upx;}
+	.empty_search input{border: none;height: 100%;width: 80%;background-color: #F4F4F4;font-size: 28upx;}
+	.empty_search img{width: 26upx;height: 26upx;}
+	ul{background-color: #eee;}
+	.sacven_goods{padding: 30upx;justify-content: space-between;color:#020202;background-color: #fff;margin-bottom: 20upx;}
+	.sacven_goods>img{width: 160upx;height: 160upx;}
+	.sacven_right{width: 72%;}
+	.sacven_name{display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;font-size: 24upx;}
+	.sacven_size{font-size: 24upx;color:#666;margin: 24upx 0 25upx 0;}
+	.sacven_price{font-size: 30upx;}

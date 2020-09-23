@@ -1,0 +1,373 @@
+.container{min-height: 100vh;background-color: #f6f6f6;width: 100%;overflow: hidden;}
+.mpvue-picker-content {
+	z-index: 99999999999999;
+}
+
+.integral-img{
+	height: 26upx;
+	width: 26upx;
+	margin-right: 6upx;
+	position: relative;
+	top: 4upx;
+}
+
+.mask {
+	height: 100vh;
+	width: 100%;
+	background-color: rgba(000, 000, 000, 0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.mask_cont {
+	text-align: center;
+	font-size: 30upx;
+	color: #020202;
+	background-color: #fff;
+	border-radius: 10upx;
+	height: 322upx;
+	width: 550upx;
+	position: relative;
+}
+
+.mask_cont>p {
+	margin: 70upx 0;
+	padding: 0 100upx;
+}
+
+.mask_cont>input {
+	width: 400upx;
+	margin: 0 auto;
+	padding-left: 20upx;
+	height: 66upx;
+	border-radius: 10upx;
+	border: 1px solid #9D9D9D;
+	text-align: left;
+}
+
+.mask_button {
+	border-top: 1px solid #eee;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.mask_button>div {
+	float: left;
+	width: 50%;
+	padding: 28upx 0;
+	color: #020202;
+}
+
+.mask_button:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+
+.mask_button_left {
+	border-right: 1px solid #eee;
+	color: #9D9D9D !important;
+}
+
+.refundBtn {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 100upx;
+	font-size: 30upx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.refundBtn div {
+	width: 50%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.fhSubmit {
+	height: 100upx;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #020202;
+	font-size: 30upx;
+	color: #fff;
+	position: absolute;
+	bottom: 0;
+}
+
+.leftText1 {
+	height: 90upx;
+	display: flex;
+	align-items: center;
+	width: 25%;
+	font-size: 28upx;
+	justify-content: flex-start;
+	padding-left: 10upx;
+	color: #020202;
+}
+
+.rightInput1 {
+	height: 90upx;
+	display: flex;
+	align-items: center;
+	width: 75%;
+	position: relative;
+}
+
+.rightInput1 input {
+	font-size: 24upx;
+	width: 100%;
+}
+
+.formList {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 0 20upx;
+	border-bottom: 1px solid #eee;
+}
+
+.fhDivTitle {
+	font-size: 36upx;
+	height: 100upx;
+	padding: 30upx;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid #eee;
+}
+
+.fhDiv {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 430upx;
+	font-size: 28upx;
+	background-color: #fff;
+}
+
+.jiantouDiv {
+	position: absolute;
+	right: 0;
+	width: 80upx;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 99;
+}
+
+.jiantouDiv img {
+	width: 16upx;
+	height: 28upx;
+}
+
+.fhRadios {
+	width: 60upx;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	left: -75upx;
+	top: 0;
+	bottom: 0;
+}
+
+.fhRadios1 {
+	width: 90upx;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	left: -60upx;
+	top: 0;
+	bottom: 0;
+	background-color: #fff;
+}
+
+.sellMoney {
+	font-size: 24upx;
+	color: #333333;
+	text-align: right;
+}
+
+.proListUpRight {
+	position: relative;
+	width: 100%;
+	padding-left: 20upx;
+	height: 120upx;
+}
+
+.proListUpLeft {
+	position: relative;
+	height: 120upx;
+}
+
+.proSellData div {
+	margin-left: 60upx;
+}
+
+.proSellData {
+	font-size: 24upx;
+	color: #999999;
+	height: 100%;
+}
+
+.proTitle {
+	font-size: 28upx;
+	color: #020202;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	text-overflow: ellipsis;
+}
+
+.proPro {
+	font-size: 22upx;
+	color: #999999;
+}
+
+.proListUp {
+	width: 100%;
+	height: 180upx;
+	padding: 30upx 0;
+	border-bottom: 1px solid #eee;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	position: relative;
+}
+
+.proListUpLeft img {
+	width: 120upx;
+	height: 120upx;
+}
+
+.proListDown {
+	height: 80upx;
+	padding: 15upx 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #fff;
+	padding: 0 30upx;
+	position: relative;
+}
+
+.proBtn {
+	width: 140upx;
+	height: 50upx;
+	border-radius: 6upx;
+	border: 1px solid #b8b8b8;
+	color: #020202;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 24upx;
+	margin-left: 10upx;
+}
+
+.proList {
+	padding: 0 30upx;
+	background-color: #fff;
+}
+
+.orderDetail {
+	height: 180upx;
+	padding: 30upx;
+}
+
+.orderTitle {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 30upx;
+	height: 80upx;
+	background-color: #fff;
+	font-size: 28upx;
+	color: #666666;
+	border-bottom: 1px solid #eee;
+}
+.orderTitle>div:last-child{color: #020202;}
+
+.date {
+	font-size: 22upx;
+	color: #999;
+	padding: 20upx 30upx;
+	background: #f6f6f6;
+}
+
+.topTabBar {
+	height: 90upx;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	border-bottom: 1px solid #eee;
+	font-size: 30upx;
+	background-color: #fff;
+	color: #999999;
+}
+
+.topTabBar div {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	width: 80%;
+	justify-content: center;
+}
+
+.active {
+	border-bottom: 2px solid @uni-color-primary-dark;
+	color: @uni-o-text-color-status-tabs-active !important;
+	font-weight: 600;
+}
+
+.ptCrl {
+	background-color: #FF3333;
+	font-size: 24upx;
+	color: #fff;
+	border-radius: 20upx;
+	height: 32upx;
+	padding: 0 10upx;
+	margin-right: 20upx;
+}
+.width_25{width: 25%;}
+.color_ff3{color: #FF3333;}
+.ml_10{margin-left: 10upx;}
+.ml_60{margin-left: 60upx;}
+.mt_40{margin-top: 40upx;}
+.mt_20{margin-top: 20upx;}
+.font_28{font-size: 28upx;}
+.color_ff0{color: #FF0000;}
+.center{display: flex!important;align-items: center!important;justify-content: center!important;}
+
+.radio_color{color:#000000;} 
+.KJ_color{background: #ff6600 !important;}
+.JP_color{background: #69b410 !important;}
+.FX_color{background: #436bff !important;}
+.ZT_color{background: #80C269 !important;}
+.hr{width: 100%;height: 20upx;background-color: #f6f6f6;}
+
+.noFindDiv{width: 100%!important;padding-top: 178upx!important;height: 100%!important;}
+.fhDivTitle .span{color: #020202;font-weight: 600;}
+.fhDivTitle .img{width: 27upx;height: 28upx;}
+.mask_cont>p{
+	margin: 30upx 0!important;
+}
+.mask_cont_div{font-size: 24upx;margin-top: 10upx;}
+.mask_cont_div .img{width: 24upx;height: 24upx;margin-right: 10upx;}

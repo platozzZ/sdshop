@@ -1,0 +1,5 @@
+.detailed-content{background-color:#fff;padding:0.4rem 0.2rem 1rem 0.2rem;}
+	.heads{text-align: center;font-weight: 100;font-size:0.36rem;color:#020202;margin-bottom: 0.8rem;}
+	.user,.content{text-indent:2em;color:#020202;font-size:0.26rem;}
+	.content{margin-bottom: 0.2rem;}
+	.time{text-align: right;font-size:0.22rem;color:#9d9d9d;}

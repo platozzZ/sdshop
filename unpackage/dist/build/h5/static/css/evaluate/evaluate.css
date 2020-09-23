@@ -1,0 +1,36 @@
+.evaluate{width:100%;background-color:#fff;}
+	.evaluate-header{height:150upx;padding-top: 40upx;border-bottom: 1px solid #eee;}
+	.evaluate-classify_li{border-radius:6upx;margin:0 20upx 20upx 0;height: 54upx;background-color: #F8F8F8;text-align: center;line-height: 54upx;font-size: 22upx;color:#9d9d9d}
+	.evaluate-header>ul{font-size:26upx;margin-left:25%;}
+	.evaluate-header>ul:after{content:"";display:block;clear:both;}
+	.evaluate-header>ul li{width:180upx;height:66upx;text-align:center;line-height: 66upx;float: left;}
+	.evaluate-header>ul li:first-child{border-top-left-radius: 10upx;border-bottom-left-radius: 10upx;border: 1px solid #E83737;}
+	.evaluate-header>ul li:last-child{border-top-right-radius: 10upx;border-bottom-right-radius: 10upx;border: 1px solid #E83737;}
+	.evaluate-header>ul li span{margin-left:10upx;}
+	.evaluate-classify{padding: 20upx 30upx 0 30upx;display: flex;flex-flow: row wrap;justify-content: flex-start;}
+	.evaluate-classify div{margin-left:20upx;margin-right: 20upx;}
+	.evaluate-content li{background-color: #fff;padding:40upx 0 30upx 0;border-bottom: 1px solid #eee;margin: 0 30upx;}
+	.content-user{margin-bottom: 20upx;}
+	.content-user img{width:46upx;height:46upx;border-radius:50%;vertical-align: bottom;}
+	.evaluate-content span,.evaluate-content .color{font-size:24upx;color:#9D9D9D;}
+	.evaluate-content p,.evaluate-content .user-name{font-size:26upx;color:#020202;flex: 1;}
+	.evaluate-content .img{width:200upx;height:200upx;margin-right: 20upx;}
+	.active{background-color: #FFFFFF;color:#020202;border:2upx solid rgba(0,0,0,1);border-radius:6upx;height: 50upx;}
+	.bigimg{height: 100vh;width:100%;position: fixed;top: 0;left: 0;z-index: 45;background-color: #242424;}
+	.bigimg_img{width: 100%;height:100vh;background-color: #000000;position:fixed;top:0;left:0;text-align: center;}
+	.bigimg img{width: 100%;}
+	
+	.position_flex{position: fixed;top: 88upx;left: 0;background-color: #FFFFFF;z-index: 29;width: 100%;height: auto;}
+	.starall{margin-left: 20upx;}
+	.starall img{width: 24upx;height: 24upx;margin-right: 10upx;}
+	.content-user{display: flex;justify-content: space-between;align-items: center;}
+	.content_n{display: flex;justify-content: flex-start;align-items: center;width: 100%;}
+	.content_img{margin-top: 20upx;}
+	.bigimg_i{height: 88upx;width: 100%;}
+	.bigimg_i img{width: 32upx;height: 32upx;margin: 30upx 0 0 30upx;}
+	.bigimg_w{height: 100%;width: 100%;margin-top: 1upx;}
+	.bigimg_w img{width: 100%;}
+	.review_title{display: flex;justify-content: space-between;align-items: center;margin: 20upx 0;}
+	.review_title p{font-size:24upx;color:#999;}
+	.review_title p:first-child{font-size:26upx;color:red;}
+	.ev_img{width: 60upx!important;height: 60upx!important;border-radius: 50%;margin-right: 20upx;}

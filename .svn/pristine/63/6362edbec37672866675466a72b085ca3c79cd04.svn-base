@@ -1,0 +1,30 @@
+.detailed-content {
+	background-color: #fff;
+	padding: 24upx 30upx 30upx 30upx;
+}
+
+.title {
+	text-align: left;
+	font-weight: Bold;
+	font-size: 18px;
+	color: #242424;
+	margin-bottom: 10upx;
+}
+
+.time {
+	text-align: left;
+	padding-bottom: 10upx;
+	color: #999999;
+	font-size: 24upx;
+}
+
+.border {
+	border-bottom: 1px solid #EEEEEE;
+	width: 100%;
+	margin-bottom: 12upx;
+	padding-top: 6px;
+}
+
+.text {
+	font-size: 28upx;
+}

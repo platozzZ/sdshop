@@ -1,0 +1,94 @@
+view,
+scroll-view,
+swiper,
+button,
+input,
+textarea,
+label,
+navigator,
+image {
+	box-sizing: border-box;
+}
+.p-flex {
+	display: flex;
+}
+
+.p-flex-sub {
+	flex: 1;
+}
+.p-flex-direction {
+	flex-direction: column;
+}
+
+.p-flex-wrap {
+	flex-wrap: wrap;
+}
+
+.p-align-start {
+	align-items: flex-start;
+}
+
+.p-align-end {
+	align-items: flex-end;
+}
+
+.p-align-center {
+	align-items: center;
+}
+
+.p-align-stretch {
+	align-items: stretch;
+}
+
+.p-self-start {
+	align-self: flex-start;
+}
+
+.p-self-center {
+	align-self: flex-center;
+}
+
+.p-self-end {
+	align-self: flex-end;
+}
+
+.p-self-stretch {
+	align-self: stretch;
+}
+
+.p-align-stretch {
+	align-items: stretch;
+}
+
+.p-justify-start {
+	justify-content: flex-start;
+}
+
+.p-justify-end {
+	justify-content: flex-end;
+}
+
+.p-justify-center {
+	justify-content: center;
+}
+
+.p-justify-between {
+	justify-content: space-between;
+}
+
+.p-justify-around {
+	justify-content: space-around;
+}
+
+.p-text-black {
+	color: #333333;
+}
+.p-text-cut{
+	width: 100%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.p-response{
+	width: 100%;
+}

@@ -1,0 +1,36 @@
+.addStore-list{
+	position: relative;
+	padding: 0 30upx;
+	font-family: 'PingFang-SC-Medium';
+}
+.addStore-list>div{
+	display: flex;
+	align-items: center;
+	padding: 30upx 0;
+	border-bottom: 1px solid rgba(238,238,238,1);
+}
+.addStore-list p{
+	font-size: 28upx;
+	margin-right: 93upx;
+	color: #242424;
+}
+.addStore-list input{
+	flex: 1;
+	font-size: 28upx;
+}
+.addStore-list img{
+	width: 15upx;
+	height: 27upx;
+}
+.addStore-btn{
+	width: 690upx;
+	height: 90upx;
+	line-height: 90upx;
+	border: 0;
+	outline: 0;
+	background: #242424;
+	color: #fff;
+	margin: 0 auto;
+	margin-top: 72upx;
+	font-size: 30upx;
+}

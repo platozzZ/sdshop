@@ -1,0 +1,201 @@
+{
+    "name" : "购日的神器",
+    "appid" : "__UNI__E9B9386",
+    // "appid" : "__UNI__C9B0A40",
+    "description" : "购日的神器",
+    "versionName" : "1.0.3",
+    "versionCode" : "100",
+    "transformPx" : false,
+    "app-plus" : {
+        /* 5+App特有相关 */
+        "modules" : {
+            "Share" : {},
+            "Payment" : {},
+            "OAuth" : {},
+            "Speech" : {},
+            "Push" : {}
+        },
+        /* 模块配置 */
+        "distribute" : {
+            /* 应用发布信息 */
+            "android" : {
+                /* android打包配置 */
+                "permissions" : [
+                    "<uses-feature android:name=\"android.hardware.camera\"/>",
+                    "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+                    "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.INTERNET\"/>",
+                    "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+                    "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
+                ]
+            },
+            "ios" : {},
+            /* ios打包配置 */
+            "sdkConfigs" : {
+                "payment" : {
+                    "weixin" : {
+                        "appid" : "wxf6e29bcc719cf499"
+                    },
+                    "alipay" : {
+                        "scheme" : ""
+                    }
+                },
+                "share" : {
+                    "weixin" : {
+                        "appid" : "wxf6e29bcc719cf499",
+                        "appsecret" : "228265f899b4f6f55e1f0638d267f3f7"
+                    }
+                },
+                "oauth" : {
+                    "weixin" : {
+                        "appid" : "wxf6e29bcc719cf499",
+                        "appsecret" : "228265f899b4f6f55e1f0638d267f3f7"
+                    }
+                },
+                "speech" : {
+                    "ifly" : {}
+                },
+                "push" : {
+                    "unipush" : {}
+                }
+            },
+            "icons" : {
+                "ios" : {
+                    "appstore" : "unpackage/res/icons/1024x1024.png",
+                    "ipad" : {
+                        "app" : "unpackage/res/icons/76x76.png",
+                        "app2x" : "unpackage/res/icons/152x152.png",
+                        "notification" : "unpackage/res/icons/20x20.png",
+                        "notification2x" : "unpackage/res/icons/40x40.png",
+                        "proapp2x" : "unpackage/res/icons/167x167.png",
+                        "settings" : "unpackage/res/icons/29x29.png",
+                        "settings2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight" : "unpackage/res/icons/40x40.png",
+                        "spotlight2x" : "unpackage/res/icons/80x80.png",
+                        "app@2x" : "unpackage/res/icons/152x152.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "proapp@2x" : "unpackage/res/icons/167x167.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png"
+                    },
+                    "iphone" : {
+                        "app2x" : "unpackage/res/icons/120x120.png",
+                        "app3x" : "unpackage/res/icons/180x180.png",
+                        "notification2x" : "unpackage/res/icons/40x40.png",
+                        "notification3x" : "unpackage/res/icons/60x60.png",
+                        "settings2x" : "unpackage/res/icons/58x58.png",
+                        "settings3x" : "unpackage/res/icons/87x87.png",
+                        "spotlight2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight3x" : "unpackage/res/icons/120x120.png",
+                        "app@2x" : "unpackage/res/icons/120x120.png",
+                        "app@3x" : "unpackage/res/icons/180x180.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "notification@3x" : "unpackage/res/icons/60x60.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "settings@3x" : "unpackage/res/icons/87x87.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight@3x" : "unpackage/res/icons/120x120.png"
+                    }
+                },
+                "android" : {
+                    "hdpi" : "unpackage/res/icons/72x72.png",
+                    "ldpi" : "unpackage/res/icons/48x48.png",
+                    "mdpi" : "unpackage/res/icons/48x48.png",
+                    "xhdpi" : "unpackage/res/icons/96x96.png",
+                    "xxhdpi" : "unpackage/res/icons/144x144.png",
+                    "xxxhdpi" : "unpackage/res/icons/192x192.png"
+                }
+            },
+            "splashscreen" : {
+                "ios" : {
+                    "iphone" : {
+                        "retina35" : "openpage.png",
+                        "retina40" : "openpage.png",
+                        "retina40l" : "openpage.png",
+                        "retina47" : "openpage.png",
+                        "retina47l" : "openpage.png",
+                        "retina55" : "openpage.png",
+                        "retina55l" : "openpage.png",
+                        "iphonex" : "openpage.png",
+                        "iphonexl" : "openpage.png",
+                        "portrait-896h@2x" : "openpage.png",
+                        "landscape-896h@2x" : "openpage.png",
+                        "protrait-896h@3x" : "guider.png",
+                        "landscape-896h@3x" : "openpage.png",
+                        "portrait-896h@3x" : "openpage.png"
+                    },
+                    "ipad" : {
+                        "portrait7" : "openpage.png",
+                        "portrait-retina7" : "openpage.png",
+                        "landscape7" : "openpage.png",
+                        "landscape-retina7" : "openpage.png",
+                        "portrait-1112h@2x" : "openpage.png",
+                        "landscape-1112h@2x" : "openpage.png",
+                        "portrait-1194h@2" : "openpage.png",
+                        "landscape-1194h@2x" : "openpage.png",
+                        "portrait-1366h@2x" : "openpage.png",
+                        "landscape-1366h@2x" : "openpage.png"
+                    }
+                },
+                "android" : {
+                    "hdpi" : "openpage.png",
+                    "xhdpi" : "openpage.png",
+                    "xxhdpi" : "openpage.png"
+                }
+            }
+        },
+        "splashscreen" : {
+            "delay" : 3000,
+            "waiting" : false
+        }
+    },
+    /* SDK配置 */
+    "quickapp" : {},
+    /* 快应用特有相关 */
+    "mp-weixin" : {
+        "appid" : "wx5ae2bb641565e4a3",
+        "setting" : {
+            "urlCheck" : true,
+            "es6" : true,
+            "postcss" : true,
+            "minified" : true
+        },
+        "permission" : {}
+    },
+    "networkTimeout" : {
+        "request" : 60000
+    },
+    "h5" : {
+        "router" : {
+            "base" : "/"
+        },
+        "domain" : "http://lkshop.fblife.com",
+        "devServer" : {
+            "https" : false
+        },
+        "title" : "中汽摩联"
+    },
+    "mp-toutiao" : {
+        // "appid" : "tt67b91104f893842e",
+        "appid" : "tt67b91104f893842e",
+        "setting" : {
+            "minified" : true
+        }
+    },
+    "mp-baidu" : {
+        "appid" : "17261537"
+    }
+}

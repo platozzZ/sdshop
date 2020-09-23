@@ -1,0 +1,5 @@
+.box{background-color: #fff;font-size: 30upx;color:#020202;}
+	.head{display: flex;justify-content: center;align-items: center;height: 88upx;font-size:40upx ;color: #020202;border-bottom: 1px solid #eee;}
+	.pic{margin-top: 160upx;text-align: center;}
+	.pic img{width:100upx;height:100upx;margin:0 auto;}
+	.box>p{text-align: center;margin:30upx 0 180upx 0;}

@@ -1,0 +1,160 @@
+.recodeTitle {
+	font-size: 28upx;
+	color: #020202;
+	margin-bottom: 10upx;
+}
+
+.recodeScore {
+	font-size: 28upx;
+	color: #020202;
+}
+
+.recodeTime {
+	font-size: 22upx;
+	color: #999999;
+}
+
+.recodeDetail {
+	height: 120upx;
+	padding: 0 30upx;
+	font-size: 28upx;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.scoreNum {
+	font-size: 88upx;
+	height: 88upx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.score_head {
+	height: 350upx;
+	font-size: 28upx;
+	background: #000000;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	width: 100%;
+	z-index: 99;
+}
+
+.score_head image {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.scoreData {
+	color: #fff;
+	text-align: center;
+	z-index: 1;
+}
+
+.scoreData .scoreData-btn {
+	height: 70upx;
+	width: 240upx;
+	background-color: #FFFFFF;
+	color: #020202;
+	font-weight: bold;
+	font-size: 30upx;
+	border-radius: 35upx;
+	line-height: 68upx;
+}
+
+.toSignBtn {
+	width: 240upx;
+	height: 70upx;
+	color: #020202;
+	font-size: 30upx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 35upx;
+	background-color: #fff;
+}
+
+.useExp {
+	z-index: 2;
+	position: absolute;
+	right: 31upx;
+	top: 20upx;
+	font-size: 24upx;
+	color: #999;
+	display: flex;
+	align-items: center;
+}
+
+.useExp img {
+	width: 24upx;
+	height: 24upx;
+	margin-right: 7upx;
+	position: initial;
+}
+
+.scoreRecode {
+	position: relative;
+}
+
+.recodeTop {
+	position: fixed;
+	height: 90upx;
+	width: 100%;
+	left: 0;
+	background-color: #fff;
+	color: #020202;
+	font-size: 30upx;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	border-bottom: 1px solid #eee;
+}
+
+.recodeTop div {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	position: relative;
+	justify-content: center;
+	width: 33.33%;
+}
+
+.border1 {
+	position: absolute;
+	height: 2px;
+	background-color: #020202;
+	bottom: 0;
+	width: 120upx;
+}
+
+.recodeDiv {
+	padding-top: 90upx;
+}
+
+/* 优化 */
+.yh-myscore {
+	height: 100vh;
+}
+
+.yh-title {
+	height: 88upx;
+}
+
+.yh-halfWidth2 {
+	position: relative;
+}
+
+.yh-kyjf {
+	opacity: 0.6;
+	margin: 14upx 0 34upx 0;
+}
+
+.yh-sign_score {
+	color: #999;
+}

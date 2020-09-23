@@ -1,0 +1,206 @@
+.body {}
+
+.service {
+	margin-bottom: 50upx;
+	overflow: hidden;
+	overflow-y: auto;
+	padding: 20upx;
+	padding-bottom: 40upx;
+}
+
+.isservice {
+	overflow: hidden;
+	overflow-y: auto;
+}
+
+.service li {
+	background: #eee;
+	width: 100%;
+	padding-bottom: 40upx;
+	clear: both;
+}
+
+.user {
+	float: left;
+	width: 80upx;
+	height: 80upx;
+	background: #999;
+}
+
+.box {
+	width: 100%;
+	min-height: 0;
+	background: transparent;
+}
+
+.info {
+	position: relative;
+	background: white;
+	border-radius: 15upx;
+	margin: 0 15%;
+	font-size: 30upx;
+	color: #020202;
+	max-width: 400upx;
+	padding: 15upx;
+	height: 100%;
+}
+
+.isImg {
+	width: 150upx;
+	height: 150upx;
+}
+
+.send_top,
+.sendBtn,
+.send_xe {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+}
+
+.sendBtn {
+	text-align: center;
+	border: 1px solid #eee;
+	font-size: 100upx;
+	justify-content: center;
+	border-radius: 50%;
+	color: #020202;
+	width: 78upx;
+	height: 78upx;
+}
+
+.sendBtn>div {
+	width: auto;
+	height: auto;
+	display: inline-block !important;
+	display: inline;
+}
+
+.sendBtn>div img {
+	width: 40upx;
+	height: 40upx;
+}
+
+.send {
+	width: 100%;
+	text-align: right;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background-color: #eee;
+}
+
+.send_top {
+	justify-content: space-around;
+	padding: 20upx;
+	border-bottom: 1px solid #DDDDDD;
+	border-top: 1px solid #ddd;
+}
+
+.send_top>input {
+	width: 620upx;
+	height: 78upx;
+	border: 1px solid #DDDDDD;
+	border-radius: 10upx;
+	padding: 0 20upx;
+	margin-right: 10upx;
+}
+
+.send_bottom {
+	width: 100%;
+	padding: 30upx;
+}
+
+.send_folat {
+	float: left;
+}
+
+.send_xe {
+	width: 120upx;
+	height: 120upx;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 14upx;
+	justify-content: center;
+}
+
+.send_folat>p {
+	text-align: center;
+	font-size: 24upx;
+	color: #666;
+	margin-top: 16upx;
+}
+
+.isMe {
+	float: right
+}
+
+.isMeBox .info {
+	background: #BE9E5F;
+	color: white;
+	/*left:13.5%;*/
+}
+
+.triangleLeft,
+.triangleRight {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0.2rem 0.2rem 0.2rem 0;
+	border-color: transparent white transparent transparent;
+	/*透明 灰 透明 透明 */
+
+}
+
+.triangleLeft {
+	position: absolute;
+	top: 0.2rem;
+	left: -0.15rem
+}
+
+.triangleRight {
+	border-width: 0.2rem 0 0.2rem 0.2rem;
+	border-color: transparent transparent transparent #BE9E5F;
+	/*透明 透明 透明 灰*/
+	position: absolute;
+	top: 0.2rem;
+	right: -0.15rem
+}
+
+/* @media screen and (max-height:800px){
+    	.service{height: 11.4rem;}
+    	.isservice{height: 7.2rem;}
+    }
+    
+    @media screen and (min-height:800px){
+    	.service{height: 14.2rem;}
+    	.isservice{height: 10rem;}
+    }
+    @media screen and (min-height:820px){
+    	.service{height: 13rem;}
+    	.isservice{height: 8.5rem;}
+    } */
+.bigImg {
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #020202;
+	width: 100%;
+	z-index: 50;
+}
+
+.bigImg>img {
+	width: 100%;
+}
+
+.box:after {
+	display: block;
+	content: '';
+	clear: both;
+}
+
+.right {
+	float: right;
+	margin: 0 3%;
+}

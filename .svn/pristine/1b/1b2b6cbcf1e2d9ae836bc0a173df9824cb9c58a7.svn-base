@@ -1,0 +1,16 @@
+.canvas{
+	position: relative;
+	width: 100%;
+	padding: 30upx;
+}
+.canvas>img{
+	width: 100%;
+	height: 1120upx;
+}
+
+#copyshare{
+	position: absolute; height: 88upx; line-height: 88upx; padding: 0 26upx;right: 0;z-index: 9999;font-size: 26upx;
+}
+#copyshare1{
+	height: 66upx; line-height: 66upx; width: 100%;font-size: 26upx; z-index: 100; text-align: right;color: #242424;padding-right: 30upx;
+}

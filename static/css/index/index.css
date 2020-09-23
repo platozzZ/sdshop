@@ -1,0 +1,21 @@
+.relative{position: relative;}
+.time{color:red;margin-right: 10upx;}
+.guiderBtn{
+	position:absolute;
+	top: 150upx;
+	right: 80upx;
+	padding: 0 20upx;
+	height: 40upx;
+	width:auto;
+	background-color: #000;
+	color: #fff;
+	font-size: 24upx;
+	display: flex;
+	align-items: center;
+	border-radius: 10upx;
+	z-index: 999;
+}
+.image{
+	width: 100%;height:100vh;position:absolute;
+}
+.swiper{height:100vh}

@@ -1,0 +1,79 @@
+.head,
+.order_header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.head {
+	height: 88upx;
+	padding: 0 30upx;
+	border-bottom: 1px solid #eee;
+	font-size: 40upx;
+	color: #242424;
+}
+
+.head_img {
+	width: 24upx;
+	height: 36upx;
+}
+
+.head_search {
+	width: 40upx;
+	height: 40upx;
+	visibility: hidden;
+}
+
+.order_header {
+	justify-content: space-around;
+	width: 100%;
+}
+
+.header_li {
+	width: 25%;
+	text-align: center;
+	height: 84upx;
+	line-height: 84upx;
+	font-size: 30upx;
+	color: #242424;
+}
+
+.header_border {
+	color: #242424;
+	position: relative;
+}
+
+.header_border:after {
+	border-bottom: 5upx solid #D30202;
+	position: absolute;
+	bottom: 0;
+	width: 50%;
+	content: "";
+	left: 25%;
+}
+
+.last_right>div {
+	justify-content: center;
+}
+
+.position_head {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	background-color: #fff;
+	z-index: 35;
+}
+
+.rule_img {
+	width: 100%;
+	height: auto;
+}
+
+/* 优化 */
+.yh-ifndefMP {
+	height: 178upx;
+	position: fixed;
+	background: #FFFFFF;
+	z-index: 999;
+}

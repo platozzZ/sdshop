@@ -1,0 +1,40 @@
+.box_eva{background-color: #f6f6f6;}
+	.goods{background-color: #fff;margin-top: 1upx;}
+	.box_eva>div:nth-child(2){margin-top: 0;}
+	.heads,.user{display: flex;justify-content: flex-start;align-items: center;}
+	.heads>img{width: 100upx;height: 100upx;margin-right: 20upx;}
+	.heads{padding: 30upx;}
+	.heads_bottom>p{font-size: 26upx;color: #020202;margin-bottom: 20upx;}
+	.heads_bottom img{width: 34upx;height: 34upx;margin-right: 10upx;}
+	.input{width: 100%;}
+	.input_text{width:100%;border:none;height: 200upx;font-size: 24upx;border-bottom: 1px solid #eee;color: #020202;}
+	.add_img{font-size: 26upx;color: #020202;margin: 20upx 0;}
+	.evaluate{padding:20upx 30upx;}
+	.user{font-size: 24upx;color:#020202;padding: 20upx;background-color: #fff;}
+	.xiangji{width:38upx;height:30upx;margin-top: 25upx;}
+	.user img{width: 28upx;height:28upx;margin-right: 20upx;}
+	.user>p{color:#999;}
+	.button{margin: 0 auto;}
+	
+	.uploadImg{position: relative;width:120upx;height:120upx;float: left;margin-right: 33upx;
+    margin-bottom:40upx;border:1px solid #eee;}
+    .picture {width: 100%;height: 100%;overflow: hidden;background-position: center center;
+	  background-repeat: no-repeat; background-size: cover;}
+    .uploadphoto{padding-top:10upx;border: 1px dashed #dddddd;position: relative;color:#020202;
+    width:122upx;height:112upx;float:left;margin-right:15upx;text-align: center;}
+    .uploadphoto .p{font-size: 24upx;}
+    .ios{font-size: 64upx;padding-top: 4upx;padding-left: 10upx;}
+    .label{position: absolute;top:0;left: 0;color:white;width: 120upx;overflow: hidden;
+    height: 120upx;}
+    .cha{
+    	position: absolute;top:-20upx;right:-15upx;text-align: center;height: 40upx;
+    	line-height: 35upx;border-radius:50%;width:40upx;background:rgb(0,0,0,0.7);
+    }
+    .inp{outline: none;background-color: transparent;filter:alpha(opacity=0);-moz-opacity:0;
+    -khtml-opacity: 0;opacity:0;margin-top: 18upx;}
+    .evaluat_ul:after{display: block;content: "";clear: both;}
+    .evaluat_li{float: left;height: 126upx;width: 122upx;margin-right: 10upx;position: relative;margin-bottom: 10upx;}
+    .img_dele{position: absolute;top: -10upx;right: 0;height: 20upx;width: 20upx;}
+    .evaluat_img{height: 126upx;width: 122upx;}
+    .img_dele{height: 28upx;width: 28upx;}
+    .heads_p{width: 500upx;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}

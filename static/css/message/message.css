@@ -1,0 +1,13 @@
+.mesage{background-color:#fff;}
+	.mesage li{padding:20upx 30upx;border-bottom:1upx solid #eee;display: flex;flex-flow: row nowrap;justify-content: left;align-items: center;position: relative;}
+	.mesage_img{width:80upx;height:80upx;vertical-align:middle;margin-right:20upx;}
+	.mesage li span,.font{font-size: 30upx;color:#020202;}
+	.size{font-size: 20upx;color:#9d9d9d;}
+	.font-size{font-size: 26upx;color:#666;width:100%;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+	.first-right{position:absolute;right:20upx;display: flex;flex-flow:row nowrap;align-items: center;}
+	.first-right .circle{display:flex;justify-content:center;align-items:center;width:30upx;height:30upx;border-radius:50%;background-color:#fff;border: 1px solid #242424;font-size: 12upx;margin-right: 0.1rem;}
+	.mesage .back{width:15upx;}
+	.mesage .back img{width:15upx;}
+	.last{display: flex;flex-flow: row nowrap;}
+	.last-right{flex: 1 1 auto;width:85%;}
+	.last-right>div{display: flex;flex-flow: row nowrap;justify-content: space-between;margin-bottom: 10upx;}

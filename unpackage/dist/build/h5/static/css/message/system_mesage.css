@@ -1,0 +1,11 @@
+.bosx{word-break: break-word;}
+	ul{background-color: #eee;padding-bottom: 20upx;}
+	ul li{background-color:#fff;padding:20upx 30upx 0 30upx;margin-bottom:20upx;}
+	ul li:last-child{margin-bottom: 0;}
+	ul li:after{display: block;content: '';clear: both;}
+	.system-header{display:flex;flex-flow:row nowrap;justify-content: space-between;}
+	.system-header span{font-size:30upx;color:#333;}
+	ul li  p{padding-bottom:20upx;border-bottom:1upx solid #eee;font-size: 28upx;color:#020202;}
+	.syatem-bottom{padding:5upx 0;height:50upx;line-height: 50upx;display: flex;justify-content:space-between;align-items: center;}
+	.syatem-bottom span{color:#666;font-size:22upx;}
+	.color{color: red!important;}

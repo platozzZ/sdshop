@@ -1,0 +1,277 @@
+let loginIndex = {
+    default: this,// for typescript
+    isCMMC() {
+        return this.getChannel().toLowerCase() == 'cmmc';
+    },
+    getChannel() {
+        return uni.getStorageSync("tripartiteChannel");
+    },
+    getPhone() {
+        return uni.getStorageSync("tripartitePhone");
+    },
+    login(me, isFirst) {
+		//调用原生登录
+		// alert('login')
+		console.log('login');
+		
+		// let userinfo =  me.$bridge.call("cmmc.pushToLogin");
+		me.$bridge.call("cmmc.pushToLogin", '', (userinfo) => {
+			// alert('login-userinfo:' + userinfo)
+			// console.log('data:',data);
+			// uni.setStorageSync('appLogin', true)
+			let user = JSON.parse(userinfo);
+			// let user = {"headImg":"https://dss0.bdstatic.com/7Ls0a8Sm1A5BphGlnYG/sys/portrait/item/netdisk.1.fe72024b.DRo4VYYgTZ2_bftuvVGMZg.jpg","mobile":"18888888888","userName":"千子","userId":"1"}
+			
+			let phone = user.mobile;
+			uni.setStorageSync('tripartitePhone', phone);
+			let channel = me.$store.state.channel
+			// alert('_login-channel：' + channel)
+			// let hasAccessid = uni.getStorageSync("hasAccessid");
+			// let access_idU = uni.getStorageSync("access_id");
+			var data = {
+			    module: 'app',
+			    action: 'login',
+			    app: 'register_channel',
+			    phone: phone,
+				userid: user.userId,
+				username: user.userName,
+				userimg: user.headImg,
+			    access_id: "",
+			    clientid: uni.getStorageSync("cid"),
+			    channel_id: channel,
+			};
+			    uni.request({
+			        data,
+			        url: "http://shoplk.fblife.com/index.php?store_id=46&store_type=2",
+			        method: 'POST',
+			        header: {
+			            'content-type': 'application/x-www-form-urlencoded'
+			        },
+			        success: (res) => {
+						console.log(res);
+			            let {
+			                access_id,
+			                wx_status
+			            } = res.data;
+			            me.$store.commit("login", access_id);
+			            me.$store.state.access_id = access_id;
+						uni.setStorageSync('laiketuiAccessId',access_id)
+						uni.setStorageSync('access_id',access_id)
+			            
+			            uni.setStorageSync("LoingByHand", true);
+						
+						let pages = getCurrentPages(); // 当前页面
+						let curPage = pages[pages.length - 1]; // 前一个页面
+						// let beforePage = pages[pages.length - 2]; // 前一个页面
+						let thisRoute = curPage.route
+						console.log(curPage);
+						console.log(thisRoute);
+						// curPage.onShow()
+						// uni.redirectTo({url: thisRoute}); 
+						if(thisRoute.indexOf("/tabBar") == -1){
+							console.log(thisRoute)
+							uni.redirectTo({
+								url: '/' + curPage.route
+							})
+						} else {
+							console.log(thisRoute)
+							uni.switchTab({
+								url: '/' + curPage.route
+							})
+						}
+						// me.$backApp.thisBack(me,'')
+						
+						// let pages = getCurrentPages(); // 当前页面
+						// let curPage = pages[pages.length - 1]; // 前一个页面
+						// // let beforePage = pages[pages.length - 2]; // 前一个页面
+						// let thisRoute = curPage.route
+						// console.log(curPage);
+						// console.log(thisRoute);
+						// alert('tabbar')
+						// uni.switchTab({
+						// 	url: '/pages/tabBar/home'
+						// })
+						// if(thisRoute.indexOf("/tabBar") == -1){
+						// 	console.log(thisRoute)
+						// 	uni.redirectTo({
+						// 		url: '/' + curPage.route
+						// 	})
+						// } else {
+						// 	console.log(thisRoute)
+						// 	// curPage.
+						// 	uni.switchTab({
+						// 		url: '/' + curPage.route
+						// 	})
+						// }
+						
+						
+			        }
+			    })
+			// var user = JSON.parse(data);
+			// console.log('user:',user);
+			// uni.setStorageSync('tripartitePhone', user.mobile);
+			// uni.setStorageSync('user_phone', user.mobile);
+			// var data = {
+			// 	module: 'app',
+			// 	action: 'login',
+			// 	app: 'register_channel',
+			// 	phone: user.mobile,
+			// 	userid: user.userId,
+			// 	username: user.userName,
+			// 	userimg: user.headImg,
+			// 	access_id: "",
+			// 	clientid: uni.getStorageSync("cid"),
+			// 	channel_id: me.$store.state.channel,
+			// };
+			// uni.request({
+			// 	data,
+			// 	url: "http://shoplk.fblife.com/index.php?store_id=46&store_type=2",
+			// 	method: 'POST',
+			// 	header: {
+			// 		'content-type': 'application/x-www-form-urlencoded'
+			// 	},
+			// 	success: (res) => {
+			// 		// alert()
+			// 		let {
+			// 			access_id,
+			// 			wx_status
+			// 		} = res.data;
+			// 		me.$store.commit("login", access_id);
+			// 		me.$store.state.access_id = access_id;
+			// 		uni.setStorageSync('laiketuiAccessId',access_id)
+			// 		uni.setStorageSync('access_id',access_id)
+			// 		uni.setStorageSync("LoingByHand", true);
+					
+			// 		this._loginH5(me);
+					
+				
+			// 	}
+			// })
+
+		})
+    },
+    //渠道号和手机号自动登录
+    _loginH5(me,isFirst) {
+		// alert('_loginH5')
+		
+		let userinfo =  me.$bridge.call("cmmc.getUserInfo");
+		// alert('userinfo:' + userinfo)
+		let user = JSON.parse(userinfo);
+		// alert()
+		// let user = {"headImg":"https://dss0.bdstatic.com/7Ls0a8Sm1A5BphGlnYG/sys/portrait/item/netdisk.1.fe72024b.DRo4VYYgTZ2_bftuvVGMZg.jpg","userName":"千子","userId":"1"}
+
+		// alert(JSON.stringify(user))
+		if(!user.mobile){
+			uni.clearStorageSync()
+			this._loginOutH5(me)
+			// alert('user.mobile:'+user.mobile)
+			// alert('uni.getStorageSync("tripartiteChannel")' + uni.getStorageSync("tripartiteChannel"))
+			return
+		}
+		// alert()
+		let phone = user.mobile;
+		let oldPhone = uni.getStorageInfo('tripartitePhone')
+		uni.setStorageSync('tripartitePhone', phone);
+        let channel = me.$store.state.channel
+		alert('_loginH5-channel：' + channel)
+        // let hasAccessid = uni.getStorageSync("hasAccessid");
+        // let access_idU = uni.getStorageSync("access_id");
+        var data = {
+            module: 'app',
+            action: 'login',
+            app: 'register_channel',
+            phone: phone,
+			userid: user.userId,
+			username: user.userName,
+			userimg: user.headImg,
+            access_id: "",
+            clientid: uni.getStorageSync("cid"),
+            channel_id: channel,
+        };
+        
+        // alert('data:'+JSON.stringify(data))
+
+        // if ((!access_idU || hasAccessid) && phone && channel) {
+            uni.request({
+                data,
+                url: "http://shoplk.fblife.com/index.php?store_id=46&store_type=2",
+                method: 'POST',
+                header: {
+                    'content-type': 'application/x-www-form-urlencoded'
+                },
+                success: (res) => {
+					console.log(res);
+					// alert(JSON.stringify(res))
+                    let {
+                        access_id,
+                        wx_status
+                    } = res.data;
+                    me.$store.commit("login", access_id);
+                    me.$store.state.access_id = access_id;
+					uni.setStorageSync('laiketuiAccessId',access_id)
+					uni.setStorageSync('access_id',access_id)
+                    
+                    uni.setStorageSync("LoingByHand", true);
+					
+                    // if(isFirst) return;
+					
+					// me.$backApp.thisBack(me,'')
+                    // uni.reLaunch({
+                    //     url: "/pages/tabBar/home"
+                    // });
+                }
+            })
+        // }
+    },
+    _loginOutH5: (me) => {
+        uni.removeStorage({
+            key: 'history'
+        })
+
+        uni.removeStorage({
+            key: 'user_phone'
+        })
+
+        uni.removeStorage({
+            key: 'hotStatu'
+        })
+        me.$store.state.cart = []
+        me.$store.state.cart_id = []
+        me.$store.state.nCart = []
+        me.$store.state.shouquan = false
+
+        // #ifdef MP
+        uni.removeStorageSync("userinfo");
+        uni.removeStorageSync("laiketuiAccessId");
+        // #endif
+
+        uni.removeStorageSync("online");
+        uni.removeStorageSync("LoingByHand")
+
+        let data = {
+            module: 'app',
+            action: 'login',
+            app: 'quit',
+            access_id: this.access_id
+        }
+
+        me.$req.post({
+            data
+        }).then(res => {
+
+            me.$store.state.access_id = ''
+            uni.removeStorage({
+                key: 'access_id'
+            })
+
+            // uni.navigateTo({
+            //     url: '../../pages/login/login?toHome=true&quit=true'
+            // })
+
+        })
+
+    }
+};
+
+
+module.exports = loginIndex;

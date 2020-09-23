@@ -1,0 +1,118 @@
+.copy {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.expressage_name {
+	margin: 30upx;
+	position: relative;
+}
+
+.expressage_name>div:first-child {
+	padding-top: 20upx;
+}
+
+.expressage_name>div p {
+	font-size: 28upx;
+	color: #9D9D9D;
+}
+
+.expressage_name>div p:first-child {
+	margin-bottom: 16upx;
+}
+
+.courier_num_opacity {
+	opacity: 0;
+	position: absolute;
+}
+
+.expressage_name>div span {
+	color: #020202
+}
+
+.copy {
+	width: 100upx;
+	height: 40upx;
+	border: 1px solid #bbb;
+	border-radius: 8upx;
+	color: #bbb;
+	font-size: 22upx;
+	position: absolute;
+	right: 0;
+	bottom: -10upx;
+}
+
+ul {
+	margin: 30upx;
+}
+
+li {
+	padding-left: 30upx;
+	position: relative;
+	height: 180upx;
+}
+
+.expressage_right p {
+	font-size: 28upx;
+	color: #020202;
+}
+
+.expressage_right p:first-child {
+	margin-bottom: 16upx;
+}
+
+.expressage_right {
+	margin-left: 30upx;
+}
+
+.expressage_time span {
+	font-size: 22upx;
+	color: #9D9D9D
+}
+
+.expressage_phone {
+	font-size: 26upx;
+	color: #0080ff;
+}
+
+.expressage_left {
+	position: absolute;
+	left: 0;
+	bottom: 10upx;
+	margin-right: 30upx;
+}
+
+.expressage_yuan {
+	width: 20upx;
+	height: 20upx;
+	border-radius: 50%;
+	background-color: #020202;
+}
+
+.expressage__xian {
+	height: 124upx;
+	border-left: 1px solid #9d9d9d;
+	position: absolute;
+	left: 9upx;
+	bottom: 35upx;
+}
+
+li:last-child>div:last-child {
+	border: none;
+}
+
+.copy_input {
+	border: none;
+}
+
+/* 优化 */
+.lines{
+	height: 30upx;
+	background-color: #eee;
+	width: 100%;
+}
+
+.zwwl{
+	text-align: center;color: #909090;display: flex;flex-direction: column;padding-top: 224upx;font-size: 28upx;color: #888888;justify-content: center;align-items: center;
+}

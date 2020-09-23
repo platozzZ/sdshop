@@ -1,0 +1,29 @@
+.a1 {
+	background-color: #eee !important;
+}
+
+.shopName {
+	color: #666666;
+	font-size: 28upx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.shopName img {
+	width: 34upx;
+	height: 34upx;
+	margin-right: 10upx;
+}
+
+.dd-boxa-img {
+	width: 15upx !important;
+	height: 27upx !important;
+	margin-left: 18upx;
+}
+
+.dd-boxa {
+	margin-right: 0;
+	padding-right: 30upx;
+	border-bottom: 1px solid #eeeeee;
+}

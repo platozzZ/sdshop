@@ -1,0 +1,68 @@
+.setup-ul>li {
+	padding: 30upx 0;
+	font-size: 30upx;
+	border-bottom: 1px solid #eee;
+}
+
+.setup-ul>li span {
+	margin-right: 30upx;
+}
+
+.last {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.color,
+.active {
+	margin-right: 0 !important;
+	font-size: 24upx;
+	cursor: pointer;
+}
+
+.last input {
+	flex: 1;
+}
+
+.active {
+	color: #9D9D9D;
+}
+
+.input {
+	width: 300upx;
+}
+
+.setup-buttom {
+	border-radius: 8upx;
+	background-color: #9A9A9A;
+}
+
+.sure {
+	background-color: #020202;
+}
+
+/* 优化 */
+
+.yh-setup-ul {
+	position: relative;
+}
+
+.yh-color {
+	font-size: 28upx;
+}
+
+.yh-time {
+	margin: 0!important;
+	font-size: 28upx;
+}
+
+.yh-setupButtomWrap {
+	margin-top: 70upx;
+}
+
+.yh-isSure {
+	width: 690upx;
+	height: 90upx;
+}

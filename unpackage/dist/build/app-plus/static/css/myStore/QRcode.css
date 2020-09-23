@@ -1,0 +1,44 @@
+.QR-bottom{
+	position: fixed;
+	display: flex;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background:rgba(0,0,0,1);
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 30upx;
+	z-index: 100;
+	font-size: 26upx;
+	color: #fff;
+}
+.QR-img{
+	width: 75upx;
+	height: 46upx;
+	margin-bottom: 19upx;
+}
+.QR-view{
+	font-size: 26upx;
+	color: #fff;
+}
+.camera{
+	width: 100%;
+	height: 100vh;
+}
+
+.QRcode-s,.QRcode-x{
+	height: 90upx;
+	line-height: 90upx;
+	margin: 30upx;
+	font-size: 30upx;
+}
+.QRcode-s{
+	background: #000;
+    color: #fff;
+   
+}
+.QRcode-x{
+	background: #fefefe;
+	color: #242424;
+}

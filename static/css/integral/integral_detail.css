@@ -1,0 +1,869 @@
+/*头部*/
+.goodAnimate {
+	animation: myGood 0.5s 1;
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
+}
+
+@keyframes myGood {
+	from {
+		bottom: -1300upx;
+	}
+
+	to {
+		bottom: 000upx;
+	}
+}
+
+.goodAnimate1 {
+	animation: myGood1 0.5s 1;
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
+}
+
+@keyframes myGood1 {
+	from {
+		bottom: 0upx;
+	}
+
+	to {
+		bottom: -1300upx;
+	}
+}
+
+.store2Div {
+	text-align: center;
+	width: 33.33%;
+	position: relative;
+}
+
+.store2Div p {
+	font-size: 30upx;
+	color: #020202;
+}
+
+.store2Div div {
+	font-size: 22upx;
+	color: #888888;
+	margin-top: 10upx;
+}
+
+.store2Div .shuxian {
+	position: absolute;
+	width: 1upx;
+	height: 60upx;
+	background-color: #dddddd;
+	right: 0;
+	top: 11upx;
+}
+
+.store1Div {
+	font-size: 28upx;
+	color: #020202;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.store {
+	padding: 0 24upx;
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 50%;
+}
+
+.store img {
+	width: 80upx;
+	height: 80upx;
+	margin-right: 20upx;
+}
+
+.store .bargainLogo {
+	border-radius: 50%;
+}
+
+.goStore {
+	background: linear-gradient(to right, #FF7272, #FF4444);
+	border-radius: 24upx;
+	width: 132upx;
+	height: 48upx;
+	padding: 10upx 12upx;
+	color: #fff !important;
+	font-size: 24upx !important;
+}
+
+.saveEWMBtn {
+	border-top: 1px solid #E6E6E6;
+	width: 100%;
+	height: 100upx;
+	font-size: 32upx;
+	background-color: #fff;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	line-height: 100upx;
+	color: #000;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.gd_header {
+	width: 100%;
+	height: 88upx;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99;
+}
+
+.gd_header img {
+	width: 64upx;
+	height: 64upx;
+	border-radius: 50%;
+	background-size: 100% 100%;
+}
+
+.gd_back {
+	position: absolute;
+	top: 12upx;
+	left: 16upx;
+}
+
+.gd_share {
+	position: absolute;
+	top: 12upx;
+	right: 92upx;
+}
+
+.gd_card {
+	position: absolute;
+	top: 12upx;
+	right: 16upx;
+}
+
+.kefu {
+	width: 64upx;
+	height: 64upx;
+	position: fixed;
+	bottom: 22%;
+	right: 16upx;
+	z-index: 1;
+}
+
+.fenxiang {
+	width: 24upx;
+	height: 24upx;
+	padding-right: 16upx;
+}
+
+.gd_span {
+	color: #9D9D9D;
+	font-size: 32upx;
+	padding-right: 30upx;
+}
+
+.gd_user {
+	position: relative;
+}
+
+.gd_user img {
+	top: 31upx !important;
+}
+
+.goods_name {
+	font-size: 30upx;
+	color: #020202;
+	padding: 0 30upx 0 30upx;
+}
+
+.goods_price {
+	margin: 0upx 0 24upx;
+	color: #ff0000;
+	font-size: 36upx;
+	display: flex;
+	justify-content: space-between;
+}
+
+.goods_price>span {
+	font-size: 30upx;
+}
+
+.data_h_h {
+	background-color: #FFFFFF00 !important;
+}
+
+.sc_price {
+	padding-top: 8upx;
+	color: #888888;
+	font-size: 24upx !important;
+}
+
+.goods_guige {
+	border-top: 1px solid #E6E6E6;
+	font-size: 28upx;
+	color: #020202;
+	padding: 30upx 0;
+	position: relative;
+}
+
+.kong {
+	height: 20upx;
+	background-color: #F6F6F6;
+}
+
+.goods_three {
+	color: #999999;
+	font-size: 24upx;
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 30upx;
+}
+
+.share {
+	position: fixed;
+	bottom: 260upx;
+	right: 30upx;
+	z-index: 30;
+}
+
+.share img {
+	width: 64upx;
+	height: 64upx;
+}
+
+.arrow {
+	position: absolute !important;
+	top: 36upx !important;
+	right: 28upx !important;
+}
+
+.user,
+.goods_d,
+.mask_num,
+.guige,
+.goods_spec li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.guige,
+.coupon {
+	color: #020202;
+	font-size: 28upx;
+	justify-content: center;
+	display: block;
+	text-align: left;
+	height: 100upx;
+	line-height: 100upx;
+	padding: 0 30upx;
+	position: relative;
+}
+
+.user {
+	border-bottom: 1px solid #eee;
+	color: #020202;
+	padding: 0 30upx;
+	font-size: 30upx;
+	height: 100upx;
+	font-weight: bold;
+}
+
+.user p {
+	font-size: 30upx;
+	font-weight: bold;
+}
+
+.evaluate_c {
+	margin: 0 30upx;
+	padding: 30upx 0 48upx 0;
+	font-size: 28upx;
+	color: #020202;
+}
+
+.user_name>img {
+	width: 64upx;
+	height: 64upx;
+	vertical-align: middle;
+	border-radius: 50%;
+}
+
+.user_guige {
+	margin: 20upx 0 40upx 0;
+	color: #9D9D9D;
+	font-size: 24upx;
+}
+
+.goods_d {
+	padding: 0 30upx;
+	height: 90upx;
+	line-height: 90upx;
+	border-bottom: 1px solid #eee;
+	font-size: 30upx;
+	color: #020202;
+	font-weight: bold;
+}
+
+.goods_d>div {
+	width: 50%;
+	text-align: center;
+	font-size: 32upx;
+	color: #020202;
+}
+
+.goods_d>div:first-child {
+	border-right: 1px solid #eee;
+}
+
+.goods_foot {
+	height: 98upx;
+}
+
+.goods_bottom>div {
+	text-align: center;
+}
+
+.goods_bottom {
+	height: 98upx;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: 30;
+	background-color: #fff;
+	border-top: 1px solid #eee;
+	display: flex;
+	justify-content: space-between;
+}
+
+.goods_one {
+	width: 90upx;
+	font-size: 22upx;
+}
+
+.goods_one p {
+	color: #020202;
+	line-height: 1.3;
+}
+
+.goods_one img {
+	width: 38upx;
+	height: 38upx;
+	margin-top: 10upx;
+}
+
+.goods_two {
+	width: 240upx;
+	line-height: 98upx;
+	background-color: #202020;
+	color: #fff;
+	font-size: 30upx;
+	float: left;
+}
+
+/* 遮罩层规格样式 */
+.mask {
+	height: 100vh;
+	width: 100%;
+	background-color: rgba(000, 000, 000, 0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 32;
+}
+
+.mask_two li {
+	float: left;
+	width: auto;
+	min-width: 60upx;
+	border: 1px solid #eee;
+	margin: 24upx 20upx 0 0;
+	padding: 0 10upx;
+}
+
+.cha {
+	width: 32upx;
+	height: 32upx;
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 10upx;
+}
+
+.back {
+	background-color: #fff;
+	color: #DDDDDD;
+	border: 1px solid #eee;
+	box-sizing: border-box;
+}
+
+.orange {
+	background-color: #020202;
+	color: #fff
+}
+
+.select {
+	color: #020202;
+}
+
+.goods_spec li {
+	padding: 30upx;
+	color: #020202;
+	font-size: 24upx;
+	padding-left: 170upx;
+	position: relative;
+	border-bottom: 1px solid #eee;
+	overflow: hidden;
+	justify-content: flex-start;
+}
+
+.goods_spec li>span {
+	font-size: 28upx;
+	color: #888;
+}
+
+.goods_spec li .g_div {
+	position: absolute;
+	top: 0;
+	left: 30upx;
+	width: 160upx;
+	height: 100%;
+	text-align: center;
+	display: flex;
+}
+
+.goods_spec li .g_div div {
+	display: flex;
+	align-items: center;
+}
+
+.goods_spec li>p {
+	width: 80%;
+	overflow: hidden;
+	height: 40upx;
+	line-height: 40upx;
+}
+
+.active {
+	color: #9D9D9D !important;
+	font-size: 26upx !important;
+}
+
+.load {
+	height: 750upx;
+	width: 100%;
+	background-color: #9D9D9D;
+	opacity: 0.7;
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: center;
+}
+
+.load>p {
+	font-size: 20upx;
+	color: #eee;
+	margin-top: 1upx;
+}
+
+/*分享DIV*/
+
+.mask_quren {
+	line-height: 98upx;
+}
+
+.shareMask {
+	width: 100%;
+	max-height: 90%;
+	background-color: #fff;
+	position: absolute;
+	bottom: 0;
+}
+
+.shareMaskTitle {
+	height: 100upx;
+	line-height: 100upx;
+	font-size: 36upx;
+	text-align: center;
+	color: #020202;
+}
+
+.shareIcon {
+	width: 50%;
+	float: left;
+	text-align: center;
+}
+
+.shareIcon img {
+	width: 80upx;
+	height: 80upx;
+	margin-bottom: 25upx;
+}
+
+.shareIcon p {
+	height: 50upx;
+	line-height: 50upx;
+	font-size: 24upx;
+	margin-bottom: 25upx;
+	color: #666;
+	text-align: center;
+}
+
+.shareEnd {
+	text-align: center;
+	font-size: 36upx;
+	height: 100upx;
+	line-height: 100upx;
+	border-top: 1px solid #eee;
+}
+
+button {
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	border-radius: 0;
+}
+
+button::after {
+	border: none;
+}
+
+.share_btn {
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	border-radius: 0;
+	width: 230upx;
+	height: 200upx;
+}
+
+.share_btn::after {
+	border: none;
+}
+
+.btn-black {
+	background-color: #020202;
+	width: 270upx;
+	height: 98upx;
+	width: 480upx;
+}
+
+.h5_yaoqing {
+	width: 80%;
+	background-color: #fff;
+	position: absolute;
+	top: 30%;
+	left: 10%;
+}
+
+.h5_top {}
+
+.h5_top_title {
+	font-size: 32upx;
+	margin: 30upx;
+}
+
+.h5_bottom {
+	font-size: 30upx;
+	display: flex;
+	justify-content: space-between;
+	margin: 30upx;
+}
+
+.h5_bottom div:nth-of-type(1) {
+	color: #020202;
+	margin-top: 10upx;
+}
+
+.h5_bottom div:nth-of-type(2) {
+	color: #FFFFFF;
+	background: rgb(139, 195, 75);
+	padding: 10upx 20upx;
+}
+
+.h5_center {
+	margin: 30upx;
+	border: 1upx solid rgb(222, 222, 222);
+	padding: 10upx;
+	color: rgb(31, 31, 31);
+	margin-bottom: 50upx;
+}
+
+/* 新版分享图片样式 */
+.shareEwm {
+	position: absolute;
+	left: 10%;
+	top: 10%;
+	height: 80%;
+	width: 80%;
+	background-color: #fff;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.imgEwm {
+	width: 100%;
+	height: 100%;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+
+.close {
+	width: 40upx;
+	height: 40upx;
+	position: absolute;
+	top: 24upx;
+	right: 24upx;
+}
+
+.saves {
+	width: 26upx;
+	height: 26upx;
+	padding-right: 20upx;
+}
+
+/* 领取优惠券样式 */
+.couponWapper {
+	height: 370px;
+	background: #F4F4F4;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.couponWapper .title {
+	position: relative;
+	height: 50px;
+	background: #FFF;
+}
+
+.couponWapper .title div {
+	line-height: 50px;
+	text-align: center;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.couponWapper .title .cha {
+	position: absolute;
+	top: 11.5px;
+	right: 15px;
+}
+
+.couponList {
+	margin-top: 14px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	height: 600upx;
+}
+
+.couponItem {
+	width: 347px;
+	height: 86px;
+	background: #fff;
+	margin: 10px auto 0 auto;
+	display: flex;
+	border-radius: 4px;
+}
+
+.couponItem .leftPart {
+	flex: 1;
+	flex-shrink: 0;
+	width: 101px;
+	color: #FF3333;
+}
+
+.couponItem .leftPart .money {
+	font-size: 28px;
+	text-align: center;
+	margin: 12px 0 auto;
+}
+
+.couponItem .leftPart .payLine {
+	font-size: 12px;
+	font-weight: normal;
+	text-align: center;
+	margin: 8px 0 0 8px;
+}
+
+.couponItem .rightPart {
+	position: relative;
+	width: 238px;
+}
+
+.couponItem .rightPart .limit {
+	font-size: 15px;
+	font-weight: bold;
+	margin: 16px 0 0 9px;
+}
+
+.couponItem .rightPart .limitDate {
+	font-size: 12px;
+	margin: 21px 0 0 9px;
+}
+
+.couponItem .rightPart .toReceive {
+	position: absolute;
+	right: 15px;
+	bottom: 8px;
+	width: 72px;
+	height: 25px;
+	line-height: 25px;
+	border-radius: 15px;
+	font-size: 15px;
+	color: #FFF;
+	background: linear-gradient(right, rgba(255, 69, 69, 1), rgba(255, 69, 69, 0.8));
+
+}
+
+.couponItem .rightPart .received {
+	position: absolute;
+	right: 15px;
+	bottom: 14px;
+	width: 72px;
+	height: 25px;
+	line-height: 25px;
+	border-radius: 15px;
+	font-size: 15px;
+	color: #FF3333;
+	border: 1px solid #FF3333;
+	background: #fff;
+}
+
+.couponItem .rightPart img {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.splitLine {
+	position: relative;
+	flex: 0 0 0;
+	border-left: 1px dashed #DDDDDD;
+	margin: 0 5px 0 0;
+	background: #fff;
+}
+
+.splitLine:before,
+.splitLine:after {
+	content: '';
+	position: absolute;
+	width: 16px;
+	height: 6px;
+	background: #F4F4F4;
+	left: -9px;
+	z-index: 1;
+}
+
+.splitLine:before {
+	border-radius: 0 0 8px 8px;
+	top: 0;
+}
+
+.splitLine:after {
+	border-radius: 8px 8px 0 0;
+	bottom: 0;
+}
+
+.order_ii {
+	position: static;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+
+/* 购物车消息提醒红点 */
+.cartnum {
+	position: absolute;
+	right: 90upx;
+	top: 8upx;
+	width: 30upx;
+	height: 30upx;
+	line-height: 30upx;
+	font-size: 24upx;
+	text-align: center;
+	background-color: #f50000;
+	color: #fff;
+	border-radius: 50%;
+}
+
+/* 优化 */
+.yh-integral {
+	overflow-y: unset;
+}
+
+.yh-boxs {
+	position: relative;
+}
+
+.yh-allCenter {
+	width: 630upx;
+	height: 187upx;
+	border-radius: 20upx;
+	background-color: #fff;
+	margin: 0 auto;
+	position: absolute;
+	bottom: 60upx;
+	left: 60upx;
+}
+
+.yh-shareWay {
+	width: 25%;
+	text-align: center;
+}
+
+.yh-imgUrl {
+	width: 80upx;
+	height: 80upx;
+}
+
+.yh-shareWay-name {
+	font-size: 24upx;
+	color: #666666;
+}
+
+.yh-ptcon {
+	width: 70%;
+	margin: 0 auto;
+}
+
+.yh-shareIcon {
+	width: 33%;
+}
+
+.yh-p {
+	margin-top: -26upx;
+}
+
+.gd_headerplus {
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+	animation-name: slidein;
+}
+
+@keyframes slidein {
+	from {
+		background-color: rgba(255, 255, 255, 0);
+	}
+
+	to {
+		background-color: rgba(255, 255, 255, 1);
+	}
+}
+
+.data_h_h {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 99;
+}

@@ -1,0 +1,76 @@
+.container{min-height: 100vh;width: 100vw;overflow: hidden;padding-bottom: 120upx;}
+/* 选择属性名称 */
+.choose_attr{padding-left: 30upx;}
+.choose_attr li{display: flex;justify-content: space-between;align-items: center;padding-right: 30upx;height: 80upx;color: #666666;border-bottom: 1px solid #EEEEEE;font-size: 28upx;}
+.choose_attr .img{width: 30upx;height: 21upx;}
+.btn_bottom{position: fixed;bottom: 0;left: 0;width: 100%;height: 98upx;background: @uni-color-primary-dark;color: @uni-text-color-inverse;font-size: 30upx;display: flex;justify-content: center;align-items: center;}
+
+/* 下面是主页面 */
+.chooseAttr,.chooseAttrStyle{display: flex;align-items: center;width: 100%;height: 90upx;padding: 0 30upx;font-size: 28upx;color: #242424;border-bottom: 1px solid #EEEEEE;}
+.chooseAttrStyle>ul{display: flex;}
+.chooseAttrStyle li{display: flex;align-items: center;margin-left: 50rpx;}
+.chooseAttrStyle li img{width: 34rpx;height: 34rpx;margin-right: 18rpx;}
+
+.chooseAttr .input{flex: 1;text-align: right;font-size: 28upx;color: #666666;padding: 0 20upx;}
+.jiantou{width: 15upx;height: 27upx;}
+.attrBox{padding: 30upx 0;position: relative;}
+.attrBoxTitle{font-size: 28upx;color: #242424;padding-bottom: 6upx;padding-left: 30upx;display: flex;align-items: center;}
+.attrBoxTitle .text{color: #999999;padding-left: 20upx;}
+.delete_img{width: 30rpx;height: 30rpx;margin-left: auto;margin-right: 30rpx;}
+.attrList{display: flex;width: 100%;flex-wrap: wrap;padding: 0 7upx;padding-right: 30upx;}
+.attrList>div{min-width: 120upx;height: 56upx;line-height: 56upx;padding: 0 20upx;color: #666666;font-size: 26upx;text-align: center;background: #F6F6F6;margin-top: 24upx;border-radius: 8upx;margin-left: 23upx;box-sizing: border-box;}
+.attrList .active{background: #FFFFFF;border: 1px solid #020202;}
+
+.choose_attr .active,.attrList .active{color: #020202;}
+.attr_hr{background: #EEEEEE;height: 1px;margin-left: 30upx;position: absolute;top: 0;width: 100%;}
+.hr+.attrBox .attr_hr{background: transparent;}
+.table{min-width: 100%;display: table;}
+.table .tr{display: table-row;}
+.table .th,.table .td{display: table-cell;text-align: center;}
+.table .th{color: #666666;font-size: 28upx;height: 90upx;line-height: 90upx;border-bottom: 1px solid #EEEEEE;white-space: nowrap;padding: 0 12upx;}
+.table .td{text-align: center;font-size: 26upx;color: #020202;border-bottom: 1px solid #EEEEEE;white-space: nowrap;padding: 0 12upx;}
+.table .td div{display: flex;justify-content: center;align-items: center;height: 88upx;}
+.table .td .input{width: 120upx;height: 60upx;border: 1px solid #B8B8B8;margin: 0 auto;border-radius: 4upx;font-size: 26upx;color: #020202;}
+.hr{background: #F6F6F6;height: 20upx;width: 100%;}
+
+
+/* 以下为自定义属性名称 */
+.addAttr,.addAttrName{display: flex;align-items: center;height: 90rpx;padding-right: 30rpx;margin-left: 30rpx;}
+.addAttr button,.addAttrName button{display: flex;align-items: center;justify-content: center;background: #FFFFFF;font-size: 26rpx;padding: 0;border-radius:4rpx;}
+.addAttr button{width: 130rpx;height: 60rpx;color: #020202;border: 1px solid #020202;}
+.addAttr button:after,.addAttrName button:after{border: 0;}
+.addLeft{width: 170rpx;font-size: 28rpx;color: #242424;}
+.addAttr input,.addAttrName input{font-size: 28rpx;flex: 1;}
+.addBtn,.removeBtn{width: 80rpx;height: 60rpx;}
+.addBtn{color: #020202;border: 1px solid #020202;}
+.removeBtn{color: #888888;border: 1px solid #999999;margin-left: 20rpx;}
+
+.addAttrValue{display: flex;align-items: center;padding-right: 10rpx;margin-left: 30rpx;padding-bottom: 10rpx;}
+.addAttrValue ul{flex: 1;display: flex;flex-wrap: wrap;}
+.addAttrValue li{
+	height: 56rpx;line-height: 56rpx;padding: 0 35rpx;
+	font-size: 26rpx;
+	color: #666666;
+	background: #F6F6F6;
+	border-radius: 8rpx;
+	margin-right: 20rpx;
+	margin-bottom: 20rpx;
+	position: relative;
+}
+.addAttrValue .icon{
+	position: absolute;
+	top: -8rpx;right: -8rpx;
+	width: 26rpx;height: 26rpx;border-radius: 50%;
+	background: #CACACA;
+}
+.addAttrValue .icon:after{
+	content: '';
+	position: absolute;
+	width: 14rpx;height: 2rpx;background: #FFFFFF;
+	left: 50%;top: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.border-bottom{
+	border-bottom: 1px solid #EEEEEE;
+}

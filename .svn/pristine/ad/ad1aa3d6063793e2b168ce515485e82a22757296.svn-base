@@ -1,0 +1,10 @@
+.head{position: fixed;left: 0;top: 0;background-color: #fff;width:100%;z-index: 40;}
+.header img{position: absolute;top:26upx;left:20upx;width:24upx;height:36upx;}
+.header a{position: absolute;width:36upx;height:36upx;border-radius: 50%;}
+.header_img{top:46upx!important;left:10upx!important;width:64upx!important;height:64upx!important;}
+.header p{text-align:center;width:100%;height:100%;line-height:88upx;color: #020202;font-size: 32upx;}
+.header span{height: 88upx;width: 60upx;display: inline-block;position: absolute;}
+.noFindDiv_top{margin-top: 100upx;}
+.noFindImg{width: 100upx;height: 100upx;}
+.noFindTitle{font-size: 30upx;color: #000000;}
+.noFindText{font-size: 24upx;}

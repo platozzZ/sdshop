@@ -1,0 +1,16 @@
+.header{background-color: white;}
+	.header img{position: absolute;top:28upx;left:20upx;width:24upx;height:36upx;}
+	.header p{text-align:center;width:100%;height:100%;line-height:88upx;}
+	.success_head{margin: 60upx auto 60upx auto;text-align: center;font-size: 28upx;color:#020202}
+	.success_head img{width: 100upx;height: 100upx;margin-bottom: 25upx;}
+	ul{padding:0 30upx}
+	li{display: flex;justify-content: space-between;align-items: center;padding: 30upx 0;border-bottom: 1px solid #eee;font-size: 28upx;}
+	li p:first-child{color:#666666}
+	.go_shopping, .look_order{
+		border-radius: 8upx;
+	}
+	
+	.success_title{padding-bottom: 5upx;}
+	.success_title_disc{font-size:22upx;color:#9D9D9D}
+	
+	.hr{height: 20upx;background-color: #eee;width: 100%;}

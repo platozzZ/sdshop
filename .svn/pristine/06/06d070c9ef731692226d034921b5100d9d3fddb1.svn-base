@@ -1,0 +1,45 @@
+.box{background-color: #F4F4F4;height: 100vh;}
+	.recharge_ts{margin: 0 30upx;font-size:22upx;color:#9D9D9D;position: relative;padding: 19upx 0px;}
+	.recharge_money{background-color: #fff;padding: 30upx;font-size: 28upx;color:#020202;position: relative;margin-bottom: 20upx;}
+	.recharge_money,.recharge_ts{display: flex;justify-content: flex-start;align-items: center;}
+	.recharge_money input{border: none;margin-left: 38upx;}
+	.setup-buttom{width: 690upx;height: 90upx;line-height: 90upx;}
+	.setup-buttom{height: 90upx;width: 690upx;background:rgba(2,2,2,1);margin:0 auto;position: relative;}
+	
+		.head,
+	.order_header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	.head {
+		height: 88upx;
+		padding: 0 30upx;
+		border-bottom: 1px solid #eee;
+		font-size: 40upx;
+		color: #242424;
+	}
+	
+	.head_img {
+		width: 24upx;
+		height: 36upx;
+	}
+	
+	.head_search {
+		width: 40upx;
+		height: 40upx;
+		visibility: hidden;
+	}
+	
+	.order_header {
+		justify-content: space-around;
+		width: 100%;
+		border-bottom: 1px solid #D2D2D2;
+	}
+	
+	.recharge_money .span{width: 25%;}
+	.choose_ul{background-color: #fff;position: relative;}
+	.choose_ul>li:first-child{font-size: 28upx;}
+	.pay_div{position: relative;width: 50%;}
+	.pay_div>p{position: absolute;top: 6upx;left: 64upx;}

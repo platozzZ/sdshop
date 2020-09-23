@@ -1,0 +1,60 @@
+	.invite{height: 100%;overflow-x: hidden;}
+	.yuan{margin: 0 20upx;width: 70upx;height: 70upx;font-size: 14px;background-color: #1A263C;display: flex;align-items: center;justify-content: center;position: relative;z-index: 2;box-shadow:0px 0px 15px 1px #182030;border-radius: 50%;color: #fff;}
+	.coinImg{position: absolute;width: 125upx;height: 125upx;z-index: 2;}
+	.load{height: 100vh;}
+	.load>div{width: 200upx;height: 200upx;border-radius: 10upx;background-color: rgba(000,000,000,0.6);color: #fff;font-size: 28upx;text-align: center;margin: 3000upx auto 0 auto;}
+	.load>div>img{width: 40upx;height: 40upx;margin: 5upx 0 20upx 0;}
+	.stepUp{display: flex;align-items: center;justify-content: center;width: 100%;}
+	.stepDown{display: flex;align-items: center;justify-content: center;width: 100%;color: #fff;margin-top: 20upx;}
+	.stepDown div{width: 33.33%;font-size: 24upx;color: #505B80;}
+	.inviteMethod{display: flex;align-items: center;justify-content: center;margin:0 auto;width: 90%;position: relative;z-index: 2;}
+	.head{background-color:#1a263c!important;z-index: 99;position: fixed;height:88upx;line-height:88upx;display: flex;align-items: center;width: 100%;}
+	.mask{position: fixed;top: 0;bottom: 0;left: 0;right: 0; background:rgba(0,0,0,0.6);z-index: 99;}
+	.maskContent{width: 80%;margin: 0 auto;height: auto;background-color: #fff;border-radius: 10upx;padding: 20upx 40upx;font-size: 26upx;color: #242424;}
+	.sign_left{display: flex;align-items: center;}
+	.sign_right{position: absolute;box-sizing: content-box;text-align: center;right: 40upx;height: 44upx;line-height:44upx;font-size: 30upx;color:#fff;width: 140upx}
+	.closeDiv{width: 200upx;height: 60upx;display: flex;align-items: center;justify-content: center;color: #000; box-sizing: content-box;background-color: #fff;border: 1upx solid #eee; border-radius: 5upx;}
+	.head img{position: absolute;top:26upx;left:20upx;width:24upx;height:36upx;}
+	.head span{height: 88upx;width: 60upx;display: inline-block;position: absolute;}
+	.complete_qiandao{border-radius: 10upx;width:520upx;padding:30upx;text-align: left;font-size:28upx;position: absolute;background-color: #fff;}
+	.complete_qiandao>p{margin-top: 10upx;}
+	.complete_b{padding-top: 45%;}
+	
+	.data_h_h{
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		background: #FFFFFF;
+		z-index: 1000;
+	}
+	
+	.bgImgDiv{width: 100%;height: 100%;position: absolute;top: 0;left: 0;z-index: 1;}
+	.bgImgDiv .img{display: block;width:100%;height: 100%;}
+	.load>div{padding: 40upx 0;}
+	.header_img{left: 140upx;}
+	.invite_content{position: relative;padding-top: 88upx;left: 0;width: 100%;background-color: #1a263c;height: 100%;}
+	.main{text-align: center;z-index: 99;}
+	.textImg{width: 78%;height: 85upx;margin-top:30upx;z-index: 2;position: relative;}
+	.coinImg.coin1{left: 0; top: -100upx;z-index: 4;}
+	.coinImg.coin2{top: -100upx;right: -40upx;width: 100upx;height: 100upx;}
+	.coinImg.coin3{left: 10upx;bottom: 80upx;transform: rotate(90deg);}
+	.redImg{width:88.8%;height: 558upx;position: relative;z-index: 2;}
+	.invite_user{color: red;font-size: 24upx;position: absolute;top: 90upx;left: 0;right: 0;z-index: 3;}
+	.invite_money{color: red;position: absolute;top: 25%;left: 0;right: 0;z-index: 3;}
+	.invite_money .span{font-size: 120upx;}
+	.invite_text{color: #E1BA87;position: absolute;bottom: 100upx;left: 0;right: 0;font-size: 24upx;z-index: 3;}
+	.inviteMethod .img{width: 100upx;height: 100upx;}
+	.inviteMethod .span{font-size: 24upx;color: #fff;}
+	.invite_strategy{margin-top: 30upx;display: flex;align-items: center;justify-content: center;position: relative;z-index: 2;}
+	.invite_strategy .img{width: 47upx;height: 33upx;}
+	.strategy_content{width: 85%;padding: 20upx 20upx 30upx;margin: 20upx auto;background-color: #1A263C;position: relative;z-index: 2;box-shadow:0px 0px 15px 1px #182030;}
+	.stepUp .yuan~.span{width: 100upx;height: 1px;background-color: #515080;display: inline-block;}
+	.mdmImgDiv{z-index: 9999; position: absolute; top: 0;bottom: 0;width: 100%;}
+	.mdmImgDiv .img{width: 100%;height: 100%;}
+	.mdmImgDiv>div{height: 100upx;display: flex;align-items: center;justify-content: center;top: auto;background: #000;color: #fff;}
+	.maskContentTitle{margin: 30upx 20upx;font-size: 32upx;text-align: center;font-weight: bold;}
+	.maskContent>div{text-align: center;margin-top: 30upx;}
+	
+	.mt_85{margin-top: 85upx;}
+	.font_28{font-size: 28upx;}

@@ -1,0 +1,685 @@
+<template>
+	<div class='order_ii' style='background-color: #F8F8F8;'>
+		<lktauthorize ref="lktAuthorizeComp" v-on:pChangeLoginStatus="changeLoginStatus"></lktauthorize>
+		<!-- #ifndef MP-ALIPAY -->
+		<div :style="{height: halfWidth}">
+			<div class="topHeight" :style="{height: halfWidth}"></div>
+		</div>
+		<!-- #endif -->
+		<!-- 普通会员面板 -->
+		<div v-if="grade=='普通会员'" class="head">
+			<div class='head_core'>
+				<div class='core_two' @tap="_navigateTo1('../my/myInfo')">
+					<div class='head_imgDiv'>
+						<img class='img' v-if='access_id1' lazy-load="true" :src="logo1" />
+						<img class='img' v-else lazy-load="true" :src="unLogin" />
+					</div>
+					<div v-if='access_id1' class='user-msg' style="flex-direction: row;">
+						<div>
+							<span class='span'>{{user.user_name}}</span>
+						</div>
+						<span class='vip-text1'>
+							<img class="img1" :src="my_leve">
+							普通会员
+						</span>
+					</div>
+					<span v-else>Hi~等你很久了</span>
+				</div>
+				<div class='loginBtn' v-if='!access_id1' @tap="_navigateTo('../login/login?landing_code=1')">
+					登录/注册
+				</div>
+				<div v-if='access_id1 && have_grade' @tap="toVip(1)" class='changeInfo'>
+					<div class='tag vip-join vip-core'>加入会员 <image :src="vip_arrow" mode="widthFix" style="width: 8upx;margin-left: 10upx;"></image></div>
+				</div>
+			</div>
+		</div>
+		<!-- 白银会员面板 -->
+		<div v-else class="head panpel" :style="'background-image:url('+imgurl_my+');background-size: 100% 100%;'">
+			<div class='head_core'>
+				<div class='core_two'>
+					<div style='margin: 0 30upx;border-radius:50%;width: 120upx;height: 120upx;' @tap="_navigateTo1('../my/myInfo')">
+						<img v-if='access_id1' lazy-load="true" style="width: 120upx;height: 120upx;margin:0;" :src="logo1" />
+						<img v-else lazy-load="true" style="width: 120upx;height: 120upx;margin:0;" :src="unLogin" />
+					</div>
+					<div v-if='access_id1' class='user-msg' style='justify-content: center;'>
+						<div>
+							<span class='span' :style="'color:'+font_color">{{user.user_name}}</span>
+							<div class='level-tag tag vip-text'>
+								<img class='img' :src="imgurl_s">
+								<span :style="'color:'+font_color">{{grade}}</span>
+							</div>
+						</div>
+						<div class='user-msg-div'>
+							<span class='ren-ree-time' :style="'color:'+date_color">{{grade_end}} 到期</span>
+							<div class='xf_button' @tap="toVip(2)">
+								<span class='ren-ree'>立即续费</span>
+							</div>
+						</div>
+					</div>
+					<span v-else>Hi~等你很久了</span>
+				</div>
+				<div class='loginBtn' v-if='!access_id1' @tap="_navigateTo('../login/login?landing_code=1')">
+					登录/注册
+				</div>
+				<div v-else @tap="_navigateTo('../../pagesA/vipClub/vipClub')" class='changeInfo'>
+					<span class='tag vip-join vip-core'>会员中心 <image :src="vip_arrow" mode="widthFix" style="width: 8upx;margin-left: 10upx;"></image></span>
+				</div>
+			</div>
+		</div>
+
+		<div class='order'>
+			<div class='order_one'>
+				<p>我的订单</p>
+				<div class='center' @tap="_order(0)">
+					<span class='span'>查看全部</span>
+					<img class='img' :src="jiantou" />
+				</div>
+			</div>
+			<ul class='order_two'>
+				<li @tap="_order(1)">
+					<div class="position_quan">
+						<img class='img' :src="qianbao" />
+						<div class='order_b' v-if='access_id1&&dfk_num'>{{dfk_num}}</div>
+					</div>
+					<p>待付款</p>
+				</li>
+				<li @tap="_order(2)">
+					<div class="position_quan">
+						<img class='img' :src="zu" />
+						<div class='order_b' v-if='access_id1&&dfh_num'>{{dfh_num}}</div>
+					</div>
+					<p>待发货</p>
+				</li>
+				<li @tap="_order(3)">
+					<div class="position_quan">
+						<img class='img' :src='dizhi' />
+						<div class='order_b' v-if='access_id1&&dsh_num'>{{dsh_num}}</div>
+					</div>
+					<p>待收货</p>
+				</li>
+				<li @tap="_order(4) ">
+					<div class="position_quan">
+						<img class='img' :src="messageImg" />
+						<div class='order_b' v-if='access_id1&&dpj_num'>{{dpj_num}}</div>
+					</div>
+					<p>待评价</p>
+				</li>
+				<li @tap="_navigateTo1('../../pagesA/afterSale/afterSale')">
+					<div class="position_quan" style="width: 80upx;margin: 0 auto;">
+						<img class='img' :src="yueImg" />
+						<div class='order_b' v-if='access_id1&&th_num'>{{th_num}}</div>
+					</div>
+					<p>退款/售后</p>
+				</li>
+			</ul>
+		</div>
+		<div class='my_data3'>
+			<div class='data3' v-if="coupon == 1 || coupon == '1'" @tap="_navigateTo1('../../pagesB/coupon/mycoupon')">
+				<img :src="yhqBg" alt="">
+				<div class='data3_in'>
+					<div>
+						<p v-if='access_id1' class='dataNum'>{{user.coupon_num}}</p>
+						<p v-else class='dataNum'>0</p>
+						<p>优惠券</p>
+					</div>
+				</div>
+			</div>
+			
+			<!-- #ifdef MP -->
+			<div  v-if=" QB == 1 " class='data3' @tap="_navigateTo1('../../pagesB/myWallet/myWallet')">
+				<img :src="qbBg" alt="">
+				<div class='data3_in'>
+					<div>
+						<p v-if='access_id1' class='dataNum'><span style='font-size: 26upx;'>￥</span>{{user.money}}</p>
+						<p v-else class='dataNum'><span style='font-size: 26upx;'>￥</span>0.00</p>
+						<p>钱包</p>
+					</div>
+				</div>
+			</div>
+			<!-- #endif -->
+			<!-- #ifndef MP -->
+			<div class='data3' @tap="_navigateTo1('../../pagesB/myWallet/myWallet')">
+				<img :src="qbBg" alt="">
+				<div class='data3_in'>
+					<div>
+						<p v-if='access_id1' class='dataNum'><span style='font-size: 26upx;'>￥</span>{{user.money}}</p>
+						<p v-else class='dataNum'><span style='font-size: 26upx;'>￥</span>0.00</p>
+						<p>钱包</p>
+					</div>
+				</div>
+			</div>
+			<!-- #endif -->
+			
+			
+			<div class='data3' @tap="_navigateTo1('../my/myScore')">
+				<img :src="jfBg" alt="">
+				<div class='data3_in'>
+					<div>
+						<p v-if='access_id1' class='dataNum'>{{user.score}}</p>
+						<p v-else class='dataNum'>0</p>
+						<p>积分</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<ul class='list_ul'>
+			<!-- #ifndef MP-ALIPAY -->
+			<li v-if="PT == 1" @tap="_navigateTo1('../../pagesA/group/groupOrder')">
+				<div>
+					<img :src="myGroup">
+					<p>我的拼团</p>
+				</div>
+			</li>
+			<!-- #endif -->
+			<li v-if="mch == 1" @tap="_navigateTo1('../../pagesA/myStore/myStore')">
+				<div>
+					<img :src="mddp">
+					<p>我的店铺</p>
+				</div>
+			</li>
+			<li v-if="KJ == 1" @tap="_navigateTo1('../../pagesA/bargain/bargain')">
+				<div>
+					<img :src="mdkj">
+					<p>我的砍价</p>
+				</div>
+			</li>
+			<li v-if="MS == 1" @tap="_navigateTo1('../../pagesB/seckill/seckill_my')">
+				<div>
+					<img :src="mdkj">
+					<p>我的秒杀</p>
+				</div>
+			</li>
+			<li @tap="_navigateTo1('../collection/collection')">
+				<div>
+					<img :src="wdsc">
+					<p>我的收藏</p>
+				</div>
+			</li>
+			<li v-if="JP == 1" @tap="_navigateTo1('../../pagesA/bidding/bidding_my')">
+				<div>
+					<img :src="wdjp">
+					<p>我的竞拍</p>
+				</div>
+			</li>
+			<li v-if="FX == 1" @tap="_navigateTo1('../../pagesA/distribution/distribution_center')">
+				<div>
+					<img :src="wdfx">
+					<p>代理中心</p>
+				</div>
+			</li>
+			<li @tap="_navigateTo1('../address/receivingAddress?state_manage=2')">
+				<div>
+					<img :src="shdz">
+					<p>收货地址</p>
+				</div>
+			</li>
+			<li @tap="_navigateTo1('../message/systemMesage')">
+				<div>
+					<img :src="xx" />
+					<p>消息</p>
+				</div>
+			</li>
+			<li v-if="JF == 1" @tap="_navigateTo1('../../pagesB/integral/integral')">
+				<div>
+					<img :src="integral_hui" />
+					<p>积分商城</p>
+				</div>
+			</li>
+			<!-- #ifdef MP-WEIXIN -->
+			<li class='relative'>
+				<div>
+					<button class="button_kefu" open-type="contact" type="default" />
+					<img style='width: 48upx;height: 48upx;margin-bottom: 20upx;' :src="mdkf" />
+					<view class="">
+						客服
+					</view>
+				</div>
+			</li>
+			<!-- #endif -->
+			<!-- #ifdef MP-BAIDU -->
+			<li class='relative'>
+				<div>
+					<button class="button_kefu" open-type="contact" bindcontact="contactCB"></button>
+					<img style='width: 48upx;height: 48upx;margin-bottom: 20upx;' :src="mdkf" />
+					<view class="">
+						客服
+					</view>
+				</div>
+			</li>
+			<!-- #endif -->
+			<!-- #ifndef MP-WEIXIN ||  MP-TOUTIAO || MP-BAIDU -->
+			<li @tap="_navigateTo1('../message/service')">
+				<div>
+					<img :src="mdkf" />
+					<p>客服</p>
+				</div>
+			</li>
+			<!-- #endif -->
+			<li @tap="_navigateTo('../my/aboutMe')">
+				<div>
+					<img :src="gywm" />
+					<p>关于我们</p>
+				</div>
+			</li>
+			<li v-if="setShow" @tap="_navigateTo1('../../pagesB/setUp/setUp')" style='border-bottom: none;'>
+				<div>
+					<img :src="sz" />
+					<p>设置</p>
+				</div>
+			</li>
+		</ul>
+		<div style="background-color: #fff;height: 1px;"></div>
+
+		<!-- 会员到期弹窗 -->
+		<div v-if="vip_modal_flag" class="vip_modal" @touchmove.stop>
+			<div class="vip_modal_data" :style="bg_vip">
+				<div class='vip_expire'>
+					<p>您的会员即将到期</p>
+					<p>马上续费</p>
+				</div>
+				<div class='vip_act'>
+					<span class='span'>{{rate}}</span>
+					<p>全场{{rate}}折</p>
+					<p class='pr_10'>专属活动</p>
+					<p>快速发货</p>
+				</div>
+				<p @tap="vip_renew">立即续费</p>
+				<div class="vip_radio" @tap="check_vip_radio">
+					<image :src="vip_check?vip_check_img1:vip_check_img2"></image>
+					<span>勾选不再显示</span>
+				</div>
+				<image class="vip_modal_close" :src="close_img" @tap="vip_modal_close"></image>
+			</div>
+		</div>
+	</div>
+</template>
+
+<script>
+	import {
+		getStorage
+	} from '../../common/storage.js'
+	import {
+		mapMutations
+	} from 'vuex'
+
+	export default {
+		data() {
+			return {
+				//会员各自背景图
+				baiyin_bg: '',
+				huangjin_bg: '',
+				heijin_bg: '',
+				log: '',
+				yhqBg: uni.getStorageSync("endurl") + "images/icon/yhqBg.png",
+				qbBg: uni.getStorageSync("endurl") + "images/icon/qbBg.png",
+				jfBg: uni.getStorageSync("endurl") + "images/icon/jfBg.png",
+				sz: uni.getStorageSync("endurl") + 'images/icon1/sz.png',
+				shdz: uni.getStorageSync("endurl") + 'images/icon1/shdz.png',
+				gywm: uni.getStorageSync("endurl") + 'images/icon1/gywm.png',
+				wdsc: uni.getStorageSync("endurl") + 'images/icon1/wdsc.png',
+				vip_check_img1: uni.getStorageSync("endurl") + 'images/icon/vip_checked.png',
+				vip_check_img2: uni.getStorageSync("endurl") + 'images/icon/vip_nocheck.png',
+				bg_vip: 'background-image: url(' + uni.getStorageSync("endurl") + 'images/icon/vip_modal.png)',
+				close_img: uni.getStorageSync("endurl") + 'images/icon/vip_close.png',
+				shouquan2: false,
+				unLogin: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + 'images/icon1/unLogin.png',
+				xx: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + 'images/icon1/xx.png',
+				myGroup: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + 'images/icon1/myGroup.png',
+				change: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + 'images/icon1/change.png',
+				storeLogo: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + 'images/icon1/storeLogo.png',
+				vip_arrow: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + 'images/icon1/arrow.png',
+				yhq: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + 'images/icon1/yhq.png',
+				love: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + 'images/icon1/love2x.png',
+				messageImg: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + 'images/icon1/dpj.png',
+				jiantou: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + 'images/icon1/jiantou2x.png',
+				qianbao: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + 'images/icon1/dfk.png',
+				zu: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + 'images/icon1/dfh.png',
+				dizhi: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + 'images/icon1/dsh.png',
+				yueImg: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + 'images/icon1/tksh.png',
+				tanhao: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + 'images/icon1/tanhao292x.png',
+				logo: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + 'images/icon1/logo789.png',
+				mddp: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + 'images/icon1/mddp.png',
+				mdkj: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + 'images/icon1/kan3x.png',
+				mdkf: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + 'images/icon1/mdkf.png',
+				wdjp: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + 'images/icon1/jp_my.png',
+				wdfx: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + 'images/icon1/fx_centerIcon.png',
+				integral_hui: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + 'images/icon1/jf.png',
+				my_leve: this.LaiKeTuiCommon.LKT_ROOT_VERSION_URL + 'images/icon1/my_leve.png',
+				logo1: '',
+				bottom: 4,
+				access_id: '',
+				user: '',
+				th_num: '', //退货数量
+				dfk_num: '', //待付款数量
+				dfh_num: '', //待发货数量
+				dsh_num: '', //待收货数量
+				dpj_num: '', //待评价数量
+				logoUrl: '', //程序图片
+				company: '', //程序名称
+				access_id1: false,
+				isClick: false, //防止因为频繁点击导致的页面跳转出错
+				openid: '', //微信使用
+				session_key: "", //微信使用
+				shouquanButton: true,
+				grade: '', //会员等级
+				grade_end: '', //到期时间
+				imgurl_my: '', //会员背景
+				imgurl_s: '',
+				font_color: '',
+				date_color: '',
+				have_grade: '', //0:没有会员等级  1：有会员等级
+				vip_modal_flag: false,
+				vip_check: false,
+				rate: '', //会员折率
+				JP: 0, //竞拍插件 1：开启  0：不开启
+				FX: 0, //分销插件 1.开启   0.不开启
+				JF: 0, //积分商城插件 1.开启   0.不开启
+				MS: 0, //秒杀插件 1.开启   0.不开启
+				KJ: 0, //砍价插件 1.开启   0.不开启
+				PT: 0, //拼团插件 1.开启   0.不开启
+				QB: 0, //秒杀插件 1.开启   0.不开启
+				coupon:0, //优惠券插件 1.开启   0.不开启
+				sign:0, //签到插件 1.开启   0.不开启
+				mch:0, //店铺插件 1.开启   0.不开启
+				setShow:uni.getStorageSync("tripartiteChannel").toLowerCase()!="cmmc"
+			}
+		},
+		onLoad(option) {
+			this.$store.state.frompage = 'my';
+			let me = this;
+		},
+		onShow() {
+			var me = this
+			this.access_id = uni.getStorageSync('access_id') ? uni.getStorageSync('access_id') : this.$store.state.access_id
+			me.LaiKeTuiCommon.getUrlFirst(me._axios);
+			this.isClick = false;
+			// #ifdef MP-WEIXIN
+			me.LaiketuiWeixinAuth.laiketui_mp_weixin_checkauth(me,me._axios);
+			// #endif
+			// #ifdef MP-ALIPAY
+			me.LaiketuiAliAuth.laiketui_mp_alipay_check(null,me,me._axios);
+			// #endif
+			// #ifdef MP-TOUTIAO
+			me.LaiketuiTTAuth.laiketui_mp_tt_check(null,me,me._axios);
+			// #endif
+			// #ifdef MP-BAIDU 
+			me.LaiketuiBDAuth.laiketui_mp_baidu_check(null,me,me._axios);
+			// #endif
+		},
+		onTabItemTap(e) {
+			this.LaiKeTuiCommon.closeMPAuthWin(this);
+		},
+		onUnload() {
+			uni.removeStorageSync('isfx')
+		},
+		computed: {
+			halfWidth() {
+				var gru = getStorage('data_height') ? getStorage('data_height') : this.$store.state.data_height
+				var heigh = parseInt(gru)
+				return heigh + 'px';
+			},
+			pBottom() {
+				var height
+				// #ifdef H5
+				height = 120
+				// #endif
+				// #ifndef H5
+				height = 0
+				// #endif
+				return uni.upx2px(height) + 'px';
+			}
+		},
+		methods: {
+			check_vip_radio() {
+				this.vip_check = !this.vip_check
+			},
+			vip_modal_close() {
+				setTimeout(function() {
+					uni.showTabBar()
+				}, 10);
+				this.vip_modal_flag = !this.vip_modal_flag
+				if (this.vip_modal_flag) {
+					uni.hideTabBar()
+				} else {
+					uni.showTabBar()
+				}
+				if (this.vip_check) {
+					var me = this
+					var data = {
+						module: 'app',
+						action: 'recharge',
+						app: 'close',
+						access_id: this.access_id,
+					}
+					uni.request({
+						data,
+						url: uni.getStorageSync("url"),
+						header: {
+							'content-type': 'application/x-www-form-urlencoded'
+						},
+						method: 'POST',
+						success: (res) => {
+							// if(res.data.code==200){
+							// 	
+							// }
+						}
+					})
+				}
+			},
+			vip_renew() {
+				// this.vip_check传给后台的数据，有无勾选不再显示续费弹窗
+				if (this.vip_check) {
+					var me = this
+					var data = {
+						module: 'app',
+						action: 'recharge',
+						app: 'close',
+						access_id: this.access_id,
+					}
+					uni.request({
+						data,
+						url: uni.getStorageSync("url"),
+						header: {
+							'content-type': 'application/x-www-form-urlencoded'
+						},
+						method: 'POST',
+						success: (res) => {
+							// if(res.data.code==200){
+							// 	
+							// }
+						}
+					})
+				}
+				this.toVip(2)
+			},
+			changeLoginStatus() {
+				var me = this;
+				me.access_id = me.$store.state.access_id;
+				me._axios();
+			},
+			_logo() {
+				var me = this
+				var data = {
+					module: 'app',
+					action: 'index',
+					app: 'index',
+					access_id: this.access_id
+				}
+				uni.request({
+					data,
+					url: uni.getStorageSync("url"),
+					xhrFields: {
+						withCredentials: true
+					},
+					header: {
+						'content-type': 'application/x-www-form-urlencoded'
+					},
+					method: 'POST',
+					success: (res) => {
+						console.log(res)
+						let {
+							data: {
+								data: {
+									logo
+								}
+							}
+						} = res
+						me.log = logo
+					}
+				})
+			},
+			_navigateTo(url) {
+				uni.navigateTo({
+					url: url,
+				})
+			},
+
+			_cancelSq() {
+				this.shouquanButton = true;
+			},
+			_navigateTo1(url) {
+				let me = this;
+				if (this.isClick == false) {
+					this.isClick = true;
+					me.$refs.lktAuthorizeComp.handleAfterAuth(me, '../login/login?landing_code=1', function() {
+						uni.navigateTo({
+							url: url,
+						})
+					});
+					setTimeout(function() {
+						me.isClick = false;
+					}, 2000);
+				}
+			},
+			_order(status) {
+				let me = this;
+				me.$refs.lktAuthorizeComp.handleAfterAuth(me, '../login/login?landing_code=1', function() {
+					me.status(status)
+					uni.navigateTo({
+						url: '../order/myOrder'
+					});
+				});
+			},
+			_axios() {
+				var me = this
+				var data = {
+					access_id: me.access_id ? me.access_id : uni.getStorageSync("access_id"),
+					module: 'app',
+					action: 'user',
+					app: 'index'
+				}
+				uni.request({
+					data,
+					url: uni.getStorageSync("url"),
+					header: {
+						'content-type': 'application/x-www-form-urlencoded'
+					},
+					method: 'POST',
+					success: function(res) {
+						console.log("!@!@!@!@!@!@!");
+						console.log(res);
+						me.coupon=res.data.plugin.coupon
+						me.sign=res.data.plugin.sign
+						me.mch=res.data.plugin.mch
+						if (res.data.code == 404) {
+							me.access_id1 = false
+							me.grade = '普通会员'
+							me.JP = res.data.plugin.JP
+							me.FX = res.data.plugin.FX
+							me.JF = res.data.plugin.JF
+							me.MS = res.data.plugin.MS
+							me.KJ = res.data.plugin.KJ
+							me.PT = res.data.plugin.PT
+							// #ifdef MP
+							me.QB = res.data.plugin.QB
+							// #endif
+							
+							// #ifdef MP
+							// me.$refs.lktAuthorizeComp.handleAfterAuth(me, '../login/login?landing_code=1', me._axios);
+							// #endif
+						} else if (res.data.code == 200) {
+							let {
+								data: {
+									data: {
+										user,
+										dfh_num,
+										logo,
+										company,
+										dfk_num,
+										dpj_num,
+										dsh_num,
+										th,
+										grade,
+										grade_end,
+										imgurl_my,
+										imgurl_s,
+										font_color,
+										date_color,
+										have_grade,
+										remind,
+										rate,
+									},
+									plugin
+								}
+							} = res
+							me.user = user
+							me.th_num = th
+							me.dfk_num = dfk_num
+							me.dfh_num = dfh_num
+							me.dsh_num = dsh_num
+							me.dpj_num = dpj_num
+							me.logoUrl = logo
+							me.company = company
+							me.logo1 = user.headimgurl
+							me.$store.state.user_phone = user.mobile
+							uni.setStorage({
+								key: 'user_phone',
+								data: user.mobile
+							})
+							me.access_id1 = true
+							me.grade = grade
+							me.grade_end = grade_end
+							me.imgurl_my = imgurl_my
+							me.imgurl_s = imgurl_s
+							me.font_color = font_color
+							me.date_color = date_color
+							me.have_grade = have_grade
+							me.rate = rate
+							me.vip_modal_flag = remind ? true : false
+							if (me.vip_modal_flag) {
+								uni.hideTabBar()
+							} else {
+								uni.showTabBar()
+							}
+							me.JP = plugin.JP
+							me.FX = plugin.FX
+							me.JF = plugin.JF
+							me.MS = plugin.MS
+							me.KJ = plugin.KJ
+							me.PT = plugin.PT
+							// #ifdef MP
+							me.QB = plugin.QB
+							// #endif
+						}
+					},
+					error: function(err) {
+						console.log(err)
+					}
+				})
+			},
+			// 进入vip支付页面
+			toVip(flag) {
+				uni.setStorageSync('edit_flag', flag)
+				uni.setStorageSync('edit_grade', this.grade)
+				this._navigateTo('../../pagesA/vip/vip')
+			},
+			...mapMutations({
+				status: 'SET_STATUS',
+			})
+		}
+	}
+</script>
+
+<style scoped>
+	@import url("../../static/css/tabBar/my.css");
+</style>

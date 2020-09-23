@@ -1,0 +1,23 @@
+.head{position: fixed;left: 0;top: 0;background-color: #fff;width:100%;z-index: 40;}
+.header_box{height: 88upx;position: relative;}
+.header img{position: absolute;top:26upx;left:20upx;width:24upx;height:36upx;}
+.header a{position: absolute;width:36upx;height:36upx;border-radius: 50%;}
+.header_img{top:46upx!important;left:10upx!important;width:64upx!important;height:64upx!important;}
+.header p{text-align:center;width:100%;height:100%;line-height:88upx;color: #020202;font-size: 32upx;}
+.header span{height: 88upx;width: 60upx;display: inline-block;position: absolute;}
+.subBtn{position: fixed;bottom: 0;left: 0;width: 100%;height:100upx;display: flex;align-items: center;
+justify-content: center;background-color: #000;color: #fff;font-size: 30upx;z-index: 9;}
+.redColor{color: #FF1818!important;}
+.table {border-right: 0;border-bottom: 0;width: 100%;min-width: 750upx;}
+.tr {width: 100%;display: flex;justify-content: space-between;}
+.th,.td {text-align: center;width:100%;margin: 0 10upx;min-width: 120upx;display: flex;align-items: center;justify-content: center;}
+.th {font-weight: 400;}
+.td input{width: 110upx;border: 1px solid #b8b8b8;text-align: center;color:#020202}
+.attrList{font-size: 28upx;color: #666;width: 100%;overflow: scroll;}
+.attrListHead{list-style: none;height: 90upx;}
+.attrListHead li{float: left;}
+.attrListBody{list-style: none;height: 90upx;}
+.attrListBody li{float: left;}
+.attrListBody div,.attrListBody span,.attrListBody input{color: #020202;}
+
+.attrListTr1{height:100%;float:left}

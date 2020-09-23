@@ -1,0 +1,393 @@
+.head,
+.order_header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.head {
+	height: 88upx;
+	padding: 0 30upx;
+	border-bottom: 1px solid #eee;
+	font-size: 40upx;
+	color: #242424;
+}
+
+.head_img {
+	width: 24upx;
+	height: 36upx;
+}
+
+.head_search {
+	width: 40upx;
+	height: 40upx;
+	visibility: hidden;
+}
+
+.order_header {
+	justify-content: space-around;
+	width: 100%;
+	border-bottom: 1px solid #D2D2D2;
+}
+
+.header_li {
+	width: 25%;
+	text-align: center;
+	height: 84upx;
+	line-height: 84upx;
+	border-bottom: 1px solid #eee;
+	font-size: 30upx;
+	color: #9D9D9D;
+}
+
+.header_border {
+	color: #020202;
+	font-weight: bold;
+	position: relative;
+}
+
+.header_border:after {
+	border-bottom: 5upx solid #020202;
+	position: absolute;
+	bottom: 0;
+	width: 50%;
+	content: "";
+	left: 25%;
+}
+
+.last_right>div {
+	justify-content: center;
+}
+
+.position_head {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	background-color: #fff;
+	z-index: 35;
+}
+
+.gz {
+	font-size: 28upx;
+	font-family: PingFang-SC-Medium;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 1);
+}
+
+.wen_img {
+	width: 30upx;
+	height: 30upx;
+	margin-right: 10upx;
+	float: left;
+	display: inline-block;
+	/* #ifdef MP-TOUTIAO */
+	margin-top: 34upx;
+	/* #endif */
+	/* #ifndef MP-TOUTIAO */
+	margin-top: 6upx;
+	/* #endif */
+	position: absolute;
+	top: 26upx;
+	right: 140upx;
+}
+
+.center_top {
+	width: 750upx;
+	/* height: 400upx; */
+	position: relative;
+	/* background: #404242; */
+}
+
+.bg_img {
+	width: 750upx;
+	height: 380upx;
+	z-index: 1001;
+}
+
+.center_top {
+	/* margin-top: 88upx; */
+}
+
+.c_btns {
+	margin: 60upx 30upx 60upx 30upx;
+	display: flex;
+	justify-content: space-between;
+	width: 690upx;
+}
+
+.c_btns view {
+	width: 260upx;
+	height: 74upx;
+	background: rgba(255, 255, 255, 1);
+	box-shadow: 0upx 0upx 16upx 0upx rgba(36, 36, 36, 0.17);
+	border-radius: 10upx;
+	font-size: 30upx;
+	font-family: PingFang-SC-Bold;
+	font-weight: bold;
+	color: rgba(36, 36, 36, 1);
+	text-align: center;
+	line-height: 74upx;
+}
+
+.c_three {
+	/* width:690upx; */
+	height: 200upx;
+	background: rgba(255, 255, 255, 1);
+	box-shadow: 0upx 0upx 16upx 0upx rgba(36, 36, 36, 0.17);
+	border-radius: 5upx;
+	margin: 60upx 30upx;
+	padding: 0upx 60upx;
+	display: flex;
+	justify-content: space-between;
+}
+
+.three_one {
+	width: 108upx;
+}
+
+.one1 {
+	width: 63upx;
+	height: 49upx;
+	margin-top: 57upx;
+	margin-left: 18upx;
+}
+
+.one2 {
+	width: 56upx;
+	height: 56upx;
+	margin-top: 50upx;
+	margin-left: 23upx;
+}
+
+.one3 {
+	width: 45upx;
+	height: 60upx;
+	margin-top: 46upx;
+	margin-left: 27upx;
+}
+
+.one4 {
+	width: 48upx;
+	height: 58upx;
+	margin-top: 46upx;
+	margin-left: 26upx;
+}
+
+.three_one view {
+	margin-top: 20upx;
+	font-size: 26upx;
+	font-family: PingFang-SC-Medium;
+	font-weight: 500;
+	color: rgba(68, 68, 68, 1);
+	text-align: center;
+}
+
+.noSupply {
+	margin-top: 88upx;
+}
+
+.no_img {
+	width: 255upx;
+	height: 204upx;
+	margin: 99upx 234upx 49upx 234upx;
+}
+
+.noSupply view:nth-of-type(1) {
+	font-size: 30upx;
+	font-family: PingFang-SC-Medium;
+	font-weight: 500;
+	color: rgba(153, 153, 153, 1);
+	text-align: center;
+}
+
+.noSupply view:nth-of-type(2) {
+	margin: 127upx 135upx;
+	width: 480upx;
+	height: 90upx;
+	background: rgba(36, 36, 36, 1);
+	border-radius: 10upx;
+	font-size: 30upx;
+	font-family: PingFang-SC-Medium;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 1);
+	text-align: center;
+	line-height: 90upx;
+}
+
+.c_t_c {
+	position: relative;
+	/* height: 420upx; */
+}
+
+.ctc_bottom {
+	display: flex;
+	justify-content: space-between;
+	padding: 0upx 52upx;
+	position: absolute;
+	bottom: 76upx;
+	left: 0upx;
+	width: 638upx;
+}
+
+.bottom_item {
+	width: 156upx;
+	text-align: center;
+}
+
+.bottom_item view:nth-of-type(1) {
+	font-size: 35upx;
+	font-family: PingFang-SC-Heavy;
+	font-weight: 800;
+	color: rgba(254, 254, 254, 1);
+}
+
+.bottom_item view:nth-of-type(2) {
+	font-size: 26upx;
+	font-family: PingFang-SC-Medium;
+	font-weight: 500;
+	color: rgba(244, 244, 244, 1);
+	margin-top: 18upx;
+}
+
+.ctc_top {
+	position: absolute;
+	top: 22upx;
+	left: 0upx;
+	width: 750upx;
+}
+
+.myheader_img {
+	float: left;
+	width: 100upx;
+	height: 100upx;
+	border-radius: 50%;
+	margin-right: 31upx;
+	position: absolute;
+	top: 18upx;
+	left: 30upx;
+}
+
+.ctx_middle {
+	float: left;
+}
+
+.mid_1 {
+	overflow: hidden;
+}
+
+.mid_1 view:nth-of-type(1) {
+	font-size: 30upx;
+	font-family: PingFang-SC-Bold;
+	font-weight: bold;
+	color: rgba(254, 254, 254, 1);
+	margin-right: 31upx;
+	float: left;
+}
+
+.mid_1 view:nth-of-type(2) {
+	float: left;
+	width: 98upx;
+	height: 36upx;
+	/* background: rgba(255, 255, 255, 1); */
+	border-radius: 5upx;
+	font-size: 26upx;
+	font-family: PingFang-SC-Medium;
+	font-weight: 500;
+	color: white;
+	text-align: center;
+	line-height: 48upx;
+}
+
+.mid_2 {
+	font-size: 24upx;
+	font-family: PingFang-SC-Medium;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 1);
+	margin-top: 23upx;
+}
+
+.ctc_right view {
+	font-size: 24upx;
+	font-family: PingFang-SC-Medium;
+	font-weight: 500;
+	color: rgba(229, 229, 229, 1);
+	margin-top: 12upx;
+}
+
+.c_right_img {
+	width: 40upx;
+	height: 40upx;
+	margin-left: 25upx;
+}
+
+.ctx_middle {
+	position: absolute;
+	top: 18upx;
+	left: 161upx;
+}
+
+.ctc_right {
+	position: absolute;
+	top: 36upx;
+	right: 30upx;
+}
+
+.wei_gz {
+	/* width: 100%; */
+	background: rgb(246, 246, 246);
+	padding: 20upx 0upx;
+	overflow: hidden;
+	padding-right: 30upx;
+}
+
+.wei_gz view {
+	float: right;
+	margin-left: 30upx;
+}
+
+.wei_gz_img {
+	width: 30rpx;
+	height: 30rpx;
+	margin-right: 12px;
+	float: right;
+	display: inline-block;
+}
+
+.beproxy {
+	/* #ifdef MP-ALIPAY */
+	text-align: center;
+	/* #endif */
+}
+
+
+/* 优化 */
+
+.yh-halfWidth {
+	height: 178upx;
+	position: fixed;
+	background: #fff;
+	z-index: 999;
+}
+
+.yh-dlzx {
+	font-size: 32upx;
+	color: #242424;
+	position: absolute;
+	width: 130upx;
+	left: 300upx; 
+	text-align: center;
+}
+
+.yh-mp {
+	width: 100%;
+	height: 88upx;
+}
+
+.yh-wei_gz {
+	color: #242424;
+}
+
+.yh-load {
+	height: 60vh;
+}

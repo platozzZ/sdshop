@@ -1,0 +1,299 @@
+.shopName {
+	color: #666666;
+	font-size: 28upx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.shopName img {
+	width: 34upx;
+	height: 34upx;
+	margin-right: 10upx;
+}
+
+.goHome {
+	border: 1px solid #000;
+	border-radius: 5upx;
+	padding: 10upx 60upx;
+	color: #000;
+	background-color: #fff;
+	display: flex;
+}
+
+.head,
+.order_header,
+.dis_play div,
+.head_two {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.head {
+	height: 88upx;
+	padding: 0 30upx;
+	border-bottom: 1px solid #eee;
+	font-size: 40upx;
+	color: #020202;
+}
+
+.head_img {
+	width: 24upx;
+	height: 36upx;
+}
+
+.head_search {
+	width: 36upx;
+	height: 36upx;
+}
+
+.order_header {
+	justify-content: space-around;
+	width: 100%;
+}
+
+.header_li {
+	width: 25%;
+	text-align: center;
+	height: 90upx;
+	line-height: 90upx;
+	border-bottom: 1px solid #eee;
+	font-size: 30upx;
+	color: #999;
+}
+
+.header_border {
+	border-bottom: 2px solid #020202;
+	color: #020202;
+	font-weight: bold;
+}
+
+.last_right>div {
+	justify-content: center;
+}
+
+/* 搜索头部 */
+.head_two {
+	padding: 30upx;
+	height: 88upx;
+	border-bottom: 1px solid #eee;
+}
+
+.search {
+	width: 600upx;
+	height: 64upx;
+	background-color: #F4F4F4;
+	border-radius: 10upx;
+	padding: 0 20upx;
+	position: relative;
+}
+
+.search img {
+	width: 26upx;
+	height: 26upx;
+	position: absolute;
+	top: 18upx;
+	right: 24upx;
+}
+
+.search input {
+	width: 90%;
+	height: 95%;
+	border: none;
+	background-color: #F4F4F4;
+}
+
+.retreat {
+	margin-top: 10upx;
+}
+
+/*  没有订单页面   */
+.dis_play {
+	text-align: center;
+	font-size: 30upx;
+	color: #020202;
+}
+
+.dis_play img {
+	margin: 140upx 0 30upx 0;
+	width: 200upx;
+	height: 200upx;
+}
+
+.dis_p {
+	font-size: 24upx;
+	color: #9d9d9d;
+	margin-top: 16upx;
+}
+
+.dis_play div {
+	width: 690upx;
+	height: 90upx;
+	border: 2px solid #020202;
+	margin: 0 auto;
+	justify-content: center;
+	margin-top: 72upx;
+}
+
+.flex,
+.express_head {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.mask {
+	height: 100vh;
+	width: 100%;
+	background-color: rgba(000, 000, 000, 0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 34;
+}
+
+.message {
+	margin: 0 30upx;
+	font-size: 28upx;
+	color: #020202;
+}
+
+.message li {
+	padding: 30upx 0;
+	border-bottom: 1px solid #eee;
+}
+
+.message li>div {
+	width: 90%;
+}
+
+.message input {
+	border: none;
+	margin-left: 30upx;
+	width: 75%;
+}
+
+.logistics {
+	background-color: #fff;
+	width: 100%;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+}
+
+.logistics_but {
+	background-color: #020202;
+	color: #fff;
+	text-align: center;
+	font-size: 30upx;
+	height: 98upx;
+	line-height: 98upx;
+	margin-top: 30upx
+}
+
+.logistics_top {
+	margin: 40upx 30upx 30upx 30upx;
+	font-size: 28upx;
+	color: #020202;
+}
+
+.logistics_top>p {
+	margin-top: 20upx;
+}
+
+.logistics_head {
+	margin-top: 0;
+	font-size: 30upx;
+	text-align: center;
+	margin-bottom: 40upx;
+	font-weight: bold;
+}
+
+.express_head {
+	padding: 30upx 0;
+	border-bottom: 1px solid #eee;
+	font-size: 30upx;
+	color: #020202;
+}
+
+.logistics_img {
+	position: absolute;
+	top: 10upx;
+	right: 30upx;
+	width: 30upx;
+	height: 30upx;
+}
+
+.load {
+	width: 100%;
+	position: absolute;
+	top: 0;
+}
+
+/* 优化 */
+
+.yh-home_navigation {
+	padding: 0upx 30upx;
+}
+
+.yh-home_input {
+	width: 608upx;
+}
+
+.yh_seart {
+	font-size: 28upx;
+}
+
+.yh-jiantou {
+	width: 15upx!important;
+	height: 26upx!important;
+	margin-left: 20upx;
+}
+
+.yh-prompt {
+	color: red;
+}
+
+.yh-order_two {
+	margin-right: 40upx;
+	width: 58%;
+}
+
+.yh-order_last {
+	justify-content: space-between;
+	display: flex;
+}
+
+.yh-line {
+	background-color: #F4F4F4;
+	height: 20upx;
+	width: 100%;
+	margin: 0;
+	border: none;
+	padding: 0;
+}
+
+.yh-noFindDiv {
+	width: 100%;
+	padding-top: 178upx;
+	height: 100%;
+}
+
+.yh-toHome {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 60upx;
+}
+
+.yh-lines {
+	background-color: #eee;
+	height: 20upx;
+	width: 100%;
+}
+
+.yh-express_btn {
+	margin-left: 30upx;
+}

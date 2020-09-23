@@ -1,0 +1,41 @@
+.container{height: 100vh;background-color: #f6f6f6;}
+.mask{height: 100vh;width: 100%;background-color: rgba(000,000,000,0.5);position: fixed;top: 0;left: 0;z-index: 34;
+	display: flex;justify-content: center;align-items: center;}
+.mask_cont{text-align: center;font-size: 30upx;color:#020202;background-color: #fff;border-radius: 10upx;height: 322upx;width: 550upx;position: relative;}
+.mask_cont>p{margin: 70upx 0;padding: 0 100upx;}
+.mask_cont .p1{margin: 30upx 0;}
+.mask_cont>input{width: 400upx;margin: 0 auto;padding-left: 20upx;height: 66upx;border-radius: 10upx;border:1px solid #9D9D9D;text-align: left;}
+.mask_button{border-top: 1px solid #eee;position: absolute;bottom: 0;width: 100%;}
+.mask_button>div{float: left;width: 50%;padding: 28upx 0;color: #020202;}
+.mask_button:after{display: block;content: "";clear: both;}
+.mask_button_left{border-right: 1px solid #eee;color: #9D9D9D!important;}
+.refundBtn{position: absolute;bottom: 0;width: 100%;height: 100upx;font-size: 30upx;display: flex;align-items: center;justify-content: center;}
+.refundBtn div{width: 50%;height: 100%;display: flex;align-items: center;justify-content: center;}
+.no{background-color: #fff;color: #020202;}
+.yes{background-color: #000;color: #FFFFFF;}
+.leftDiv{color: #242424;}
+.RightDiv{color: #020202;display: flex;}
+.RightDiv img{width: 120upx;height: 120upx;margin-left: 20upx;}
+.formList{height: 90upx;display: flex;align-items: center;justify-content: space-between;width: 100%;font-size: 28upx;
+background-color: #fff;border-bottom: 1px solid #eee;}
+.sellMoney{font-size: 24upx;color: #020202;}
+.proListUpRight{position: relative;width: 100%;padding-left:20upx ;height: 120upx;}
+.proListUpLeft{position: relative;height: 120upx;}
+.proSellData div{margin-left:60upx;}
+.proSellData{font-size: 24upx;color: #999999;display: flex;align-items: flex-start;justify-content: flex-start;height: 120upx;}
+.proTitle{font-size: 26upx;color: #020202;overflow: hidden;display: -webkit-box;
+-webkit-box-orient: vertical;-webkit-line-clamp:2;text-overflow: ellipsis;}
+.proPro{font-size: 20upx;color: #999999;margin-bottom: 20upx;}
+.proListUp{height: 180upx;display: flex;align-items: center;
+justify-content: space-around;position: relative;background-color: #fff;}
+.proListUpLeft img{width: 120upx;height: 120upx;}
+
+.pd_30{
+	padding: 0 30upx;
+}
+.container_data{background-color: #fff;}
+.miaoshu{height: auto;padding: 30upx;border-bottom: none;align-items: flex-start;}
+
+.mask_cont .div1{display: flex;align-items: center;justify-content: center;font-size: 24upx;margin-top: 10upx;}
+.mask_cont .div1 .img{width: 24upx;height: 24upx;margin-right: 10upx;}
+.mask_cont .div1 .span{color: #666666;}

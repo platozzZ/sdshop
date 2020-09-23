@@ -1,0 +1,98 @@
+.container{min-height: 100vh;padding-bottom: 100upx;}
+.table {border-right: 0;border-bottom: 0;width: 100%;min-width: 750upx;}
+.tr {width: 100%;display: flex;justify-content: space-between;}
+.th,.td {text-align: center;width:100%;margin: 0 10upx;min-width: 120upx;display: flex;align-items: center;justify-content: center;}
+.th {font-weight: 400;}
+.td input{width: 110upx;border: 1px solid #b8b8b8;text-align: center;color:#020202}
+.attrList{font-size: 28upx;color: #666;width: 100%;overflow: scroll;}
+.seeTitle{height: 90upx;padding-left:32upx;display: flex;align-items: center;justify-content: flex-start;font-size: 28upx;
+color: #020202;border-bottom: 1px solid #eee;font-weight: bold;}
+/* .list1{width: 130upx;height: 100%;display: flex;align-items: center;justify-content: center;float:left}
+.list2{min-width: 100upx;padding: 0 10upx;height: 100%;display: flex;align-items: center;justify-content: center;float:left} */
+.attrList{font-size: 28upx;color: #666;width: 100%;overflow: scroll;padding: 0 20upx;}
+.attrListHead{list-style: none;height: 90upx;}
+.attrListHead li{float: left;}
+.attrListBody{list-style: none;height: 90upx;}
+.attrListBody li{float: left;}
+.attrListBody div,.attrListBody span{color: #020202;}
+.attrListBody>div:first-child{height:100%;float:left}
+.submitBtn{color: @uni-text-color-inverse;display: flex;align-items: center;justify-content: center;font-size: 30upx;width: 50%;height: 100%;}
+.boxChooseDiv{height: 50upx;font-size: 26upx;color: #666666;border-radius: 4upx;background-color: #f6f6f6;display: flex;
+padding: 0;align-items: center;justify-content: center;margin-right: 20upx;min-width: 80upx;flex-flow: wrap;padding:0 10upx}
+.active{background-color: #fff!important;color: #000000!important;border: 1px solid #000000;}
+.jiantouDiv{position: absolute;right: 0;width: 80upx;height: 100%;display: flex;align-items: center;justify-content: center;z-index: 99;}
+.jiantouDiv img{width: 16upx;height: 28upx;}
+.mainImg{height: 28upx;width: 50%;position: absolute;bottom: 0;background-color: #FF3333;color: #FFF;font-size: 22upx;z-index: 2;
+text-align: center;display: flex;align-items: center;justify-content: center;}
+.delImg{width: 30upx;height: 30upx;position: absolute;top: -10upx;right: -10upx;z-index: 2;}
+.setMainImg{height: 28upx;width: 100%;position: absolute;bottom: 0;background-color: #575859;color: #FFF;font-size: 22upx;z-index: 2;
+text-align: center;display: flex;align-items: center;justify-content: center;}
+.upImg1{width: 120upx;height: 120upx;position: relative;margin-right:10upx;margin-bottom: 20upx;}
+.upImg{width: 120upx;height: 120upx;border: 1px dashed #dddddd;font-size: 22upx;text-align: center;padding: 8upx;}
+.formDiv{border-bottom: 1px solid #E9ECEF;}
+.formList1{display: flex;width: 100%;padding: 20upx 0;}
+.formList{display: flex;align-items: center;width: 100%;}
+.leftText{width: 25%;font-size: 28upx;padding-left: 10upx;color: #020202;}
+.rightInput{display: flex;flex-wrap:wrap;position: relative;flex: 1;}
+.leftText1{height: 90upx;display: flex;align-items: center;width: 180rpx;font-size: 28upx;justify-content: flex-start;padding-left: 10upx;color: #020202;}
+.attrSpan{font-size: 28upx;color: #020202;}
+.rightInput1{height: 90upx;display: flex;align-items: center;position: relative;flex: 1;}
+.leftText2{display: flex;align-items: center;width: 30%;font-size: 28upx;justify-content: flex-end;padding-right: 30upx;color: #666666;}
+.rightInput2{display: flex;align-items: center;width: 70%;position: relative;font-size: 28upx;color: #020202;}
+.rightInput2 input{
+	font-size: 28upx;
+}
+.formList2{display: flex;width: 100%;padding-top:10upx}
+.formDiv1{border-bottom: 0px solid #E9ECEF;}
+.rightInput input{font-size: 26upx;width: 100%;}
+.rightInput1 input{font-size: 26upx;width: 100%;}
+.must{color: red;margin-right: 10upx;}
+@media screen and (max-width:374x){
+ .rightInput1 {
+	width: 70%;
+ }
+ .leftInput1 {
+	width: 30%;
+ }
+ .leftInput{
+	width: 30%;
+ }
+}
+.max_5{color: #BBBBBB;font-size:22upx}
+.jianyi{font-size: 22upx;color: #b8b8b8;}
+
+.pl_30{padding:0 0 0 30upx}
+.wh_100{width: 100%!important;height: 100%!important;}
+.h_auto{height: auto;}
+.font_28{font-size: 28upx;}
+.font_30{font-size: 30upx;}
+.border_bottom_0{border-bottom: none;}
+
+.submitDiv{position: fixed; bottom: 0; left: 0; right: 0;display: flex;align-items: center;justify-content: center;height: 100upx;z-index: 2000;}
+.submitDiv .div1{background-color: @uni-color-primary-light;}
+.submitDiv .div2{background-color: @uni-color-primary-dark;}
+.submitDiv .div3{background-color: #202020;width: 100%;}
+
+.hr{background-color: #f6f6f6;height: 20upx;}
+.scroll{overflow: scroll;}
+
+.mask>div{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 740upx;
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+}
+.mask_title{display: flex;justify-content: space-between;height: 100upx;width: 100%;line-height: 100upx;color: #020202;font-size: 30upx;font-weight: bold;padding: 0 30upx;box-sizing: border-box;align-items: center;}
+.closeImg{width: 27upx;height: 28upx;}
+.chooseValueBox{display: flex;height: 90upx;background: #F6F6F6;font-size: 28upx;color: #020202;line-height: 90upx;border-top: 1px solid #EEEEEE;border-bottom: 1px solid #EEEEEE;}
+.chooseValue{display: flex;}
+.chooseValue .span{white-space: nowrap;padding: 0 30upx;}
+.flex{display: flex;}
+.chooseBox{flex: 1;overflow: scroll;padding: 0 30upx;box-sizing: border-box;}
+.chooseBox li{height: 80upx;line-height: 80upx;color: #666666;font-size: 26upx;}
+.chooseBox li.active1{color: #020202;}
+.chooseBox li.active1{display: block;justify-content: space-between;align-items: center;}
+.active1 .img{width: 29upx;height: 21upx;float: right;}

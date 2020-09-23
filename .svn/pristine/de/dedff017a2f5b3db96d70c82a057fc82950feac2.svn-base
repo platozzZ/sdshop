@@ -1,0 +1,250 @@
+.order_two {
+	border: none;
+}
+
+.refund_pay {
+	margin-left: 30upx;
+	font-size: 28upx;
+	color: #020202;
+}
+
+.refund_pay>li,
+.right_d {
+	display: flex;
+	/* justify-content: flex-start; */
+	/* align-items: flex-start; */
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.refund_pay>li:nth-child(1) {
+	align-items: center;
+	justify-content: space-between;
+}
+
+.refund_pay>li {
+	padding: 30upx 30upx 30upx 0;
+	border-bottom: 1px solid #eee;
+}
+
+.uploadphoto {
+	padding-top: 4upx;
+	border: 1px dashed #999;
+	position: relative;
+	width: 150upx;
+	height: 150upx;
+	float: left;
+	margin-right: 15upx;
+	text-align: center;
+	padding-bottom: 10upx;
+}
+
+.uploadphoto .p {
+	font-size: 24upx;
+	width: 100upx;
+	margin: 0 auto;
+}
+
+.xiangji {
+	width: 40upx;
+	height: 33upx;
+	margin-top: 16upx;
+}
+
+.input_text {
+	border: none;
+	height: 120upx;
+	font-size: 24upx;
+	margin-left: 20upx;
+	flex:1
+}
+
+.refund_money {
+	border: none;
+	width: 51%;
+	margin: 2upx 0 0 10upx;
+}
+
+.refund_color {
+	font-size: 24upx;
+	color: #9D9D9D;
+}
+
+.font_red {
+	color: #FF0000
+}
+
+.bottom {
+	height: 98upx;
+	width: 100%;
+	font-size: 30upx;
+	color: #fff;
+	text-align: center;
+	line-height: 98upx;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	background-color: #020202;
+}
+
+.p_name {
+	width: 100%;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+
+.img_dele {
+	position: absolute;
+	top: -10upx;
+	right: 0;
+	height: 20upx;
+	width: 20upx;
+}
+
+.evaluat_img {
+	height: 100%;
+	width: 100%;
+}
+
+.img_dele {
+	height: 28upx;
+	width: 28upx;
+}
+
+.evaluat_li {
+	float: left;
+	height: 150upx;
+	width: 150upx;
+	margin-right: 10upx;
+	position: relative;
+}
+
+.evaluat_ul:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+
+/*  申请成功     */
+.return_end {
+	font-size: 28upx;
+	color: #020202
+}
+
+.pic {
+	margin-top: 60upx;
+	text-align: center;
+}
+
+.pic img {
+	width: 100upx;
+	height: 100upx;
+	margin: 0 auto;
+}
+
+.end_one {
+	font-size: 30upx;
+	text-align: center;
+	margin-top: 30upx;
+}
+
+.end_two {
+	font-size: 24upx;
+	color: #9D9D9D;
+	text-align: center;
+	margin: 18upx 0 60upx 0;
+}
+
+.return_message {
+	height: 90upx;
+	padding: 30upx 0 30upx 30upx;
+	border-bottom: 1px solid #eee;
+}
+
+.end_message {
+	display: flex;
+/* 	justify-content: space-between;
+	align-items: center; */
+}
+
+.end_message {
+	padding: 30upx 30upx 0 30upx;
+}
+
+.end_text {
+	width: 450upx;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-align: right;
+}
+
+.end_lef {
+	text-align: justify;
+	width: 150upx;
+	height: 39upx;
+	/* color: #030303; */
+}
+
+.end_lef:after {
+	width: 100%;
+	height: 0;
+	margin: 0;
+	display: inline-block;
+	overflow: hidden;
+	content: '';
+}
+
+
+/* 优化 */
+.order_two_div {
+	margin-right: 40upx;
+	width: 58%;
+}
+
+.yh-line {
+	height: 30upx;
+	width: 100%;
+	background-color: #eee;
+}
+
+.right_d_div {
+	display: flex;
+	align-items: center;
+}
+
+.yh-refund_color {
+	color: #BBBBBB;
+	padding-right: 30rpx;
+}
+
+.yh-evaluat_ul {
+	line-height: 1;
+}
+
+.yh-return_suess-div {
+	height: 150upx;
+}
+
+.yh-return-end-div {
+	height: 30upx;
+	width: 100%;
+	background-color: #eee;
+}
+
+.evaluat_imgBox{
+	align-items: flex-start!important;
+	justify-content: flex-start!important;
+}
+
+.flex1{
+	flex: 1;
+}
+
+.end_msg_ul {
+	color: #666666;
+	font-size: 28rpx;
+}

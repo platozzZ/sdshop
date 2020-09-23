@@ -1,0 +1,5 @@
+.scanning {height: 100vh;}
+#scan_d {width: 100%;position: absolute;left: 0;right: 0;top: 0;bottom:300upx;text-align: center;color: #9D9D9D;background: #9D9D9D;height: 100%;}
+.scan_ind{height: 100%;}
+.scan_banck{position: absolute;top: 20upx;left: 30upx;width:24upx;height:36upx;}
+.scan_banck img{width:24upx;height:36upx;}

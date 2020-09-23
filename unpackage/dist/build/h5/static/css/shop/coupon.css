@@ -1,0 +1,84 @@
+	.container{min-height: 100vh;}
+	.coupon_but{width: 140upx;height: 50upx;border-radius: 13px;font-size: 28upx;padding: 0;border: 0;margin: 0;outline: 0;}
+	.coupon_but::after{border: 0;}
+	.mycoupon_head,.mycoupon_tab,.mycoupon_bottom{display: flex;justify-content: space-between;align-items: center;}
+	.mycoupon_bottom{width: 100%;height: 98upx;background-color: #020202;position: fixed;bottom: 0;left: 0;color: #fff;font-size: 30upx;justify-content: center;z-index: 9999;}
+	.mycoupon_head{background-color: #fff;position: fixed;top:0;left: 0;width: 100%;height: 88upx;z-index: 40;color:#020202;font-size:40upx;padding: 0 30upx;}
+	.mycoupon_head img{width:24upx;height:36upx;}
+	.coupon_price{color: #FF3333;font-size: 48upx;padding-top: 18upx;}
+	.coupon_img{width: 145upx;height: 145upx;position: absolute;top: -30upx;right: -23upx;}
+	.coupon_li{position: relative;height: 128upx;margin-bottom: 20upx;box-shadow: 1px 1px 1px 4upx #eee;padding: 20upx;box-shadow: none;}
+	.img_zin1{position: absolute;top:0;left: 0;right: 0;bottom: 0;z-index: -1;width: 100%;height: 100%;padding: 0;}
+	.coupon_left {
+    width: 75%;
+    text-align: left;
+    margin: 0;
+    border-right: none;
+    padding-right: 30upx;
+    z-index: 9;
+    height: 168upx;
+	padding-left: 10upx;
+	padding: 29upx 10upx;
+	display: flex; flex-direction: column; justify-content: space-between;
+	}
+	.coupon_right {
+    width: 25%;
+    text-align: right;
+    margin: 0;
+    z-index: 9;
+    height: 168upx;
+	padding-left: 22upx;
+	}
+	.coupon_status{z-index: 9;
+	width: 100upx;
+	height: 100upx;
+	position: absolute;
+	right: 0;
+	top: 0;}
+	.coupon_p {
+    font-size: 30upx;
+    font-weight: bold;
+	}
+	.coupon_t{color: #FF3333;
+	border: 1px solid #FF3333;
+	height: 40upx;
+	line-height: 40upx;
+    padding: 0 8upx;
+    margin-left: 14upx;
+    border-radius: 2px;}
+	.coupon_gous{
+		background-color: #fff;
+		border: 1px solid #FF4444 !important;
+		color: #FF4444;
+	}
+	.coupon_no{
+		/* background-color: #b8b8b896; */
+		background-color: #cccccc;
+	}
+	.coupon_red{
+		background-color: #FF4444;
+	}
+	uni-button:after{border: 0;}
+	
+	.coupon_ul{
+		padding-bottom: 120upx;
+	}
+	
+	.active_color{
+		color: rgb(184, 184, 184)!important;
+		border-color: rgb(184, 184, 184)!important;
+	}
+	
+	.bg_img{
+		width: 100%;height: 100%;position: absolute;left: 0;
+	}
+	.coupon_li_data{
+		display: flex;align-items: center;width: 100%;
+	}
+	
+	.coupon_price_div{display: flex;align-items: center;justify-content: flex-start;height: 20px;}
+	.coupon_price_span{font-weight: 400;font-size: 28upx;padding-top: 16upx;}
+	.coupon_price_money{font-weight: bold;font-size: 48upx;}
+	.color_ff3{color: #FF3333;}
+	.font_28{font-size: 28upx;}
+	.ml_0{margin-left: 0!important;}

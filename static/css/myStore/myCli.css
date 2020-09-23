@@ -1,0 +1,23 @@
+.dateListExpand{padding-left: 90upx;background-color: #fff;display: flex;align-items: center;justify-content: space-between;height: 60upx;}
+.dateListExpand span{font-size: 26upx;color: #b8b8b8;}
+.date{font-size: 22upx;color: #999;padding: 20upx 30upx;}
+.dateList{background-color: #fff;display: flex;align-items: center;justify-content: space-between;height: 90upx;}
+.dateListLeft{display: flex;align-items: center;justify-content: center;position: relative;}
+.dateList img{width: 50upx;height: 50upx;border-radius: 50%;margin: 0 20upx;}
+.dateList span{font-size: 26upx;color: #020202;white-space: nowrap;}
+.dateListLeft span{
+	max-width: 180rpx;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;
+}
+.dateListLeft .mr_72{
+	max-width: 280rpx;
+}
+.expand{position: absolute;right: 0;width: 72upx;}
+.wsj_box{display: flex; flex-direction: column; justify-content: center; align-items: center; padding-top: 200upx;}
+.wsj_box>div{text-align: center;color: #888F9E;font-size: 30upx;}
+.wsj_img{width: 220upx;height: 250upx;}
+
+.container{min-height: 100vh;background-color: #F6F6F6;}
+.today_list{padding: 0 20upx;background-color: #FFF;}
+.border_bottom{border-bottom: 1px solid #eee;}
+.mr_72{margin-right: 72upx;}
+.jiantou{width: 28upx!important;height: 16upx!important;}

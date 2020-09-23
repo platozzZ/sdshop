@@ -1,0 +1,164 @@
+.head,
+.order_header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.head {
+	height: 88upx;
+	padding: 0 30upx;
+	border-bottom: none;
+	font-size: 40upx;
+	border-bottom: 1px solid #E5E5E5;
+}
+
+.head_img {
+	width: 24upx;
+	height: 36upx;
+}
+
+.head_search {
+	width: 40upx;
+	height: 40upx;
+	visibility: hidden;
+}
+
+.order_header {
+	justify-content: space-around;
+	width: 100%;
+}
+
+.header_li {
+	width: 25%;
+	text-align: center;
+	height: 84upx;
+	line-height: 84upx;
+	border-bottom: 1px solid #eee;
+	font-size: 30upx;
+	color: #9D9D9D;
+}
+
+.header_border {
+	color: #020202;
+	font-weight: bold;
+	position: relative;
+}
+
+.header_border:after {
+	border-bottom: 5upx solid #020202;
+	position: absolute;
+	bottom: 0;
+	width: 50%;
+	content: "";
+	left: 25%;
+}
+
+.last_right>div {
+	justify-content: center;
+}
+
+.position_head {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	background-color: #fff;
+	z-index: 35;
+}
+
+.content {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	/* #ifdef APP-PLUS */
+	top: 246upx;
+	/* #endif */
+	/* #ifndef APP-PLUS */
+	top: 158upx;
+	/* #endif */
+	left: 50upx;
+	right: 50upx;
+	height: 1008upx;
+	background: #fff;
+	padding: 36upx;
+	box-shadow: 0px 6px 16px 0px rgba(36, 36, 36, 0.17);
+	border-radius: 5px;
+}
+
+.codeImg {
+	width: 500upx;
+	height: 500upx;
+}
+
+
+.saveClass {
+	font-size: 28upx;
+	font-family: PingFang-SC-Medium;
+	font-weight: 500;
+	color: #000;
+}
+
+uni-page-body {
+	height: 100%;
+	/* background-color: #f5f5f5; */
+}
+
+.ewm-center {
+	font-size: 28upx;
+	color: #020202;
+	font-weight: bold;
+	text-align: center;
+	margin: 40upx;
+}
+
+.ewm-title {
+	font-size: 32upx;
+	color: #242424;
+	font-weight: bold;
+	width: 100%;
+}
+
+.ewm-text {
+	display: flex;
+	width: 100%;
+	padding-left: 10upx;
+	margin-top: 26upx;
+}
+
+.ewm-text span {
+	font-size: 28upx;
+	color: #020202;
+	font-weight: bold;
+}
+
+.ewm-text p {
+	font-size: 28upx;
+	color: #242424;
+	flex: 1
+}
+
+/* 优化 */
+.yh-halfWidth {
+	height: 178upx;
+	position: fixed;
+	background: #FFFFFF;
+	z-index: 999;
+}
+
+.yh-smfx {
+	font-size: 32upx;
+}
+
+.yh-ewm {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	margin-top: 150upx;
+}
+
+.yh-ewmImg {
+	width: 678upx;
+	height: 1036upx;
+}

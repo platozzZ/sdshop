@@ -1,0 +1,60 @@
+.order_two {
+	border: none;
+}
+
+ul {
+	margin-left: 30upx;
+}
+
+.return_pay,
+.return_right>div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.return_pay {
+	padding: 30upx 30upx 30upx 0;
+	border-bottom: 1px solid #eee;
+}
+
+.return_right>p {
+	font-size: 24upx;
+	color: #9D9D9D;
+}
+
+.return_right>div {
+	justify-content: flex-start;
+	font-size: 28upx;
+	color: #020202;
+	margin-bottom: 18upx;
+}
+
+.return_right>div img {
+	margin-right: 20upx;
+}
+
+.p_name {
+	width: 100%;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+
+/* 优化 */
+.yh-order-two-div {
+	margin-right: 40upx;
+	width: 58%;
+}
+
+.yh-line {
+	height: 30upx;
+	width: 100%;
+	background-color: #eee;
+}
+
+.return_right_img {
+	width: 35upx;
+	height: 35upx;
+}
